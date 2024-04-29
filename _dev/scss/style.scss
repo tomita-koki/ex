@@ -1,0 +1,37 @@
+@use './_base/' as *;
+@use './_foundation/' as *;
+@use './_mlc/' as *;
+
+.test {
+  color: tomato;
+  font-size: px-to-rem(20);
+
+  @include media-query {
+    color: blue;
+    font-size: px-to-rem(30);
+  }
+
+  @include hover {
+    color:  green;
+  }
+}
+
+.section-01 {
+    margin-top: 120px;
+    margin-bottom: 120px;
+
+    @include media-query {
+      margin-top: 160px;
+      margin-bottom: 160px;
+    }
+
+    &__inner {
+        padding: 0 40px;
+        margin: auto;
+        max-width: 1280px;
+
+        @include media-query {
+            padding: 0 16px;
+        }
+   }
+ }
