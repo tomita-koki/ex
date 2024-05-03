@@ -8,12 +8,12 @@ const browserSync = require("browser-sync");
 gulp.task("browserSyncTask", function (done) {
   browserSync({
     server: {
-      baseDir: "docs", // ルートとなるディレクトリを指定
+      baseDir: "src", // ルートとなるディレクトリを指定
     },
   });
 
   // srcフォルダ以下のファイルを監視
-  gulp.watch("docs/**", function (done) {
+  gulp.watch("src/**", function (done) {
     browserSync.reload(); // ファイルに変更があれば同期しているブラウザをリロード
     done(); //追加
   });
