@@ -332,6 +332,10 @@ li {
   }
 }
 
+.list-test {
+  color: aqua;
+}
+
 .test {
   color: tomato;
   font-size: 1.25rem;
@@ -344,14 +348,14 @@ li {
 }
 @media (any-hover: hover) {
   .test:hover {
-    color: green;
+    color: rgb(165, 123, 123);
   }
 }
 .test:focus-visible {
-  color: green;
+  color: rgb(165, 123, 123);
 }
 .test:active {
-  color: green;
+  color: rgb(165, 123, 123);
 }
 
 .section-01 {
