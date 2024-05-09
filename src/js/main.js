@@ -1,11 +1,5 @@
-console.log('testまじ');
+// import SetNewsLabel from './news-label.js';
 
-// import $ from './general';
-
-/**
- * SetNewsLabel
- * ニュースページにラベルを追加する
- */
 class SetNewsLabel {
     constructor(elm, options) {
         const defOptions = {
@@ -106,12 +100,18 @@ class SetNewsLabel {
     }
 }
 
-// export default SetNewsLabel;
+const win = window;
+const doc = win.document;
 
-// 実行する要素を取得
-const newsList = document.querySelector('.js-label-01');
 
-// SetNewsLabelのインスタンスを作成し、実行する要素を渡す
-const newsLabeler = new SetNewsLabel(newsList);
+doc.querySelectorAll('.js-label-01').forEach((elm) => {
+    new SetNewsLabel(elm, {
+        selector: {
+            item: '.js-label-01 > li',
+            content: '.content',
+            date: '.date'
+        }
+    });
+});
 
-console.log(newsLabeler);
+console.log('testgfds');
