@@ -1,0 +1,175 @@
+@use '../../_foundation/' as *;
+
+.box-news-01{
+    margin-top:26px;
+    // html:lang(en) & {
+    //   .news-list-01 a .data,
+    //   .news-list-01 .link .data{
+    //     max-width:350px;
+    //     .day {
+    //       min-width: 175px;
+    //     }
+    //   }
+    // }
+    .news-hdg-01{
+      font-size:2.2rem;
+      line-height:1.5;
+      margin-top:14px;
+    }
+    .news-list-01 + .news-hdg-01{
+      margin-top:48px;
+    }
+  
+    .news-list-01{
+      margin-top:10px;
+      border-top:#ccc 1px solid;
+      li{
+        border-bottom:#ccc 1px solid;
+      }
+      a, .link{
+        // @extend %flex;
+        // @include flex-align;
+        display: flex;
+        align-items: center;
+        color: var(--COLOR_FONT);
+        width:100%;
+        text-decoration:none;
+        padding:18px 0 17px 0;
+        .data{
+        //   @extend %flex;
+        //   @include flex-align;
+        //   @include flex-content(space-between);
+          text-decoration:none;
+          width:fit-content;
+          max-width:290px;
+          padding-right:27px;
+          *{text-decoration:none;}
+        }
+        .day{
+          min-width: 145px;
+        }
+        b{
+          flex:1;
+        }
+        .icon{
+          display:block;
+          margin-top:3px;
+          width:120px;
+          border-radius:50px;
+          color:#fff;
+          font-size:1.2rem;
+          text-align:center;
+          padding:1px 0 0 0;
+          &.release{
+            background:#005bac;
+          }
+          &.ir{
+            background:#f5a200;
+          }
+          &.csr{
+            background:#7dc639;
+          }
+          &.notice{
+            background:#656d73;
+          }
+        }
+      }
+    }
+    @include media-query{
+      html:lang(en) & {
+        .news-list-01 a .data,
+        .news-list-01 .link .data{
+          width: 100%;
+          max-width: none;
+        //   @include flex-content(space-between);
+        //   @include flex-align(flex-start);
+          .day{
+            width: 160px;
+          }
+          .type{
+            justify-content: end;
+          }
+        }
+        .news-list-01 a .icon,
+        .news-list-01 .link .icon{
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
+      .news-hdg-01{
+        font-size:1.8rem;
+        font-weight:bold;
+      }
+      .news-list-01{
+        a, .link{
+          display:block;
+          .data{
+            // @include flex-content(flex-start);
+            // @include flex-align;
+            font-size:1.4rem;
+            padding-right:0;
+            width:100%;
+            max-width: none;
+          }
+          .type{
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+          }
+          .icon{
+            margin-top:0;
+            padding:0 5px;
+            height:20px;
+            width:100px;
+          }
+          .day{
+            min-width: 115px;
+          }
+          b{
+            display:block;
+            font-size:1.4rem;
+            margin-top:5px;
+          }
+        }
+      }
+    }
+  }
+  /* IE11 */
+//   @media all and (-ms-high-contrast:none){
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 a .icon{
+//       padding-top:4px;
+//       margin-top:0;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 a .icon + .icon{
+//       margin-top:3px;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 .link .icon{
+//       padding-top:4px;
+//       margin-top:0;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 .link .icon + .icon{
+//       margin-top:3px;
+//     }
+//   }
+//   @media all and (-ms-high-contrast:none) and (max-width:768px){
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 a .icon + .icon{
+//       margin-top:0;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 .link .icon + .icon{
+//       margin-top:0;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 a .icon{
+//       padding-top:2px;
+//     }
+//     *::-ms-backdrop,
+//     .box-news-01 .news-list-01 .link .icon{
+//       padding-top:2px;
+//     }
+//   }
