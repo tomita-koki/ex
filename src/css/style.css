@@ -450,6 +450,86 @@ li {
 }
 
 /* IE11 */
+.fp-box {
+  border-radius: 10px;
+  background-color: var(--COLOR_BOX);
+}
+.fp-box__inner {
+  padding: 40px;
+}
+.fp-box__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .fp-box__title {
+    font-size: 1.875rem;
+  }
+}
+
+.fp-image {
+  text-align: center;
+}
+
+.fp-btn {
+  padding-top: 40px;
+  text-align: center;
+}
+.fp-btn__inner {
+  display: inline-block;
+  background-color: var(--COLOR_PRIMARY);
+  text-decoration: none;
+  border-radius: 40px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  min-width: 224px;
+  width: 100%;
+  box-shadow: 0 4px 0 var(--COLOR_SECONDARY);
+  transition: box-shadow ease 0.3s, transform ease 0.3s;
+  padding: 15px 40px;
+}
+@media (any-hover: hover) {
+  .fp-btn__inner:hover {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+}
+.fp-btn__inner:focus-visible {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.fp-btn__inner:active {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.fp-btn__text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--COLOR_LIGHT);
+}
+
+.fp-lyt-media__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px 40px;
+}
+@media screen and (min-width: 768px) {
+  .fp-lyt-media__inner {
+    flex-direction: row;
+  }
+}
+.fp-lyt-media--reverse .fp-lyt-media__inner {
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 768px) {
+  .fp-lyt-media--reverse .fp-lyt-media__inner {
+    flex-direction: row-reverse;
+  }
+}
+
 .test {
   color: tomato;
   font-size: 1.25rem;
@@ -491,4 +571,128 @@ li {
   .section-01__inner {
     padding: 0 16px;
   }
+}
+
+.center {
+  text-align: center;
+}
+
+.fp-header-head {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-head {
+    justify-content: center;
+  }
+}
+.fp-header-head__link {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-head__link {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: #000;
+    font-size: 0.8125rem;
+  }
+}
+.fp-header-head__btn {
+  background-color: #f4f4f4;
+  display: flex;
+  height: 56px;
+  overflow: hidden;
+  padding: 56px 0 0 60px;
+  position: relative;
+  width: 60px;
+}
+.fp-header-head__btn-state {
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #67a9cf;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 22px;
+  top: 25px;
+}
+.fp-header-head__btn-state::before, .fp-header-head__btn-state::after {
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #67a9cf;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 22px;
+}
+.fp-header-head__btn-state::before {
+  top: 20px;
+}
+.fp-header-head__btn-state::after {
+  bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-head__btn {
+    display: none;
+  }
+}
+.fp-header-head__btn.active {
+  display: none;
+}
+
+.fp-header-body {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-body {
+    border-radius: 10px;
+    background-color: var(--COLOR_BOX);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: block;
+  }
+}
+.fp-header-body__inner {
+  padding: 40px;
+  position: relative;
+}
+.fp-header-body__inner-link {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-body__inner-link {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: #000;
+    font-size: 0.8125rem;
+  }
+}
+.fp-header-body__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .fp-header-body__title {
+    font-size: 1.875rem;
+  }
+}
+
+.fp-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.fp-menu__item-text {
+  color: #908282;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

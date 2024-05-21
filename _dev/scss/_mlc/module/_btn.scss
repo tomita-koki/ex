@@ -1,0 +1,30 @@
+@use '../../_foundation/' as *;
+
+.fp-btn {
+    padding-top: 40px;
+    text-align: center;
+  
+    &__inner {
+      display: inline-block;
+      background-color: var(--COLOR_PRIMARY);
+      text-decoration: none;
+      border-radius: 40px;
+      max-width: fit-content;
+      min-width: 224px;
+      width: 100%;
+      box-shadow: 0 4px 0 var(--COLOR_SECONDARY);
+      transition: box-shadow ease .3s, transform ease .3s;
+      padding: 15px 40px;
+  
+      @include hover {
+        box-shadow: none;
+        transform: translateY(4px);
+      }
+    }
+  
+    &__text {
+      font-size: px-to-rem(24);
+      font-weight: bold;
+      color: var(--COLOR_LIGHT);
+    }
+  }

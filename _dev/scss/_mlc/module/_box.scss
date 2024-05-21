@@ -173,3 +173,24 @@
 //       padding-top:2px;
 //     }
 //   }
+
+
+.fp-box {
+  border-radius: 10px;
+  background-color: var(--COLOR_BOX);
+
+  &__inner {
+    padding: 40px;
+  }
+
+  &__title {
+    font-size: px-to-rem(24);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include media-query {
+      font-size: px-to-rem(30);
+    }
+  }
+}

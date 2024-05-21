@@ -35,3 +35,135 @@
         }
    }
  }
+
+ .center {
+  text-align: center;
+ }
+
+ .fp-header-head {
+  display: flex;
+
+  @include media-query {
+    justify-content: center;
+  }
+  
+  &__link {
+    display: none;
+
+    @include media-query {
+      display: block;
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      color: #000;
+      font-size: px-to-rem(13);
+    }
+  }
+
+  &__btn {
+    background-color: #f4f4f4;
+    display: flex;
+    height: 56px;
+    overflow: hidden;
+    padding: 56px 0 0 60px;
+    position: relative;
+    width: 60px;
+
+    &-state {
+      transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background-color: #67a9cf;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 22px;
+      top: 25px;
+
+      &::before,
+      &::after {
+        transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background-color: #67a9cf;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 22px;
+      }
+
+      &::before {
+        top: 20px;
+      }
+
+      &::after {
+        bottom: 20px;
+      }
+    }
+
+    @include media-query {
+      display: none;
+    }
+   }
+
+   &__btn.active {
+    display: none;
+   }
+ }
+
+ .fp-header-body {
+  display: none;
+
+  @include media-query {
+    border-radius: 10px;
+    background-color: var(--COLOR_BOX);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+    text-align: center;
+    display: block;
+  }
+
+  &__inner {
+    padding: 40px;
+    position: relative;
+
+    &-link {
+      display: none;
+
+      @include media-query {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        color: #000;
+        font-size: px-to-rem(13);
+      }
+    }
+  }
+
+  &__title {
+    font-size: px-to-rem(24);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include media-query {
+      font-size: px-to-rem(30);
+    }
+  }
+}
+
+ .fp-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+
+  &__item {
+    &-text {
+      color: #908282;
+      font-weight: bold;
+    }
+  }
+ }

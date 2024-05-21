@@ -1,0 +1,26 @@
+@use '../../_foundation/' as *;
+
+.fp-lyt-media {
+    $_this: &;
+  
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px 40px;
+  
+      @include media-query {
+        flex-direction: row;
+      }
+    }
+  
+    &--reverse {
+      #{$_this}__inner {
+        flex-direction: column-reverse;
+  
+        @include media-query {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
