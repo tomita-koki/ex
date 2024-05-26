@@ -6,7 +6,7 @@
   
     &__inner {
       display: inline-block;
-      background-color: var(--COLOR_PRIMARY);
+      background-color: var(--COLOR_BTN);
       text-decoration: none;
       border-radius: 40px;
       max-width: fit-content;
@@ -25,6 +25,36 @@
     &__text {
       font-size: px-to-rem(24);
       font-weight: bold;
-      color: var(--COLOR_LIGHT);
+      color: var(--COLOR_PRIMARY);
+    }
+  }
+
+  .btn-box {
+    padding-top: 40px;
+    text-align: center;
+
+    &-more {
+      display: inline-block;
+      background-color: var(--COLOR_BTN);
+      text-decoration: none;
+      border-radius: 40px;
+      max-width: fit-content;
+      min-width: 224px;
+      width: 100%;
+      box-shadow: 0 4px 0 var(--COLOR_SECONDARY);
+      transition: box-shadow ease .3s, transform ease .3s;
+  
+      @include hover {
+        box-shadow: none;
+        transform: translateY(4px);
+      }
+
+      &__item {
+        padding: 15px 40px;
+      }
+
+      &__text {
+        color: var(--COLOR_PRIMARY);
+      }
     }
   }
