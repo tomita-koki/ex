@@ -425,6 +425,7 @@ li {
 }
 .btn-box-more__item {
   padding: 15px 40px;
+  width: 100%;
 }
 .btn-box-more__text {
   color: var(--COLOR_PRIMARY);
