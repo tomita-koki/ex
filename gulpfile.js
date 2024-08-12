@@ -1,20 +1,25 @@
-// gulpプラグインの読みこみ
-const gulp = require("gulp");
+/*
+src 参照元を指定
+dest 出力先を指定
+watch ファイル監視
+series(直列処理)と(並列処理)
+*/
+const { gulp, src, dest, watch, series} = require('gulp');
 
-// browser-syncのプラグインの読み込み
-const browserSync = require("browser-sync");
+// プラグインを呼び出し
+var sass = require('gulp-sass')(require('sass'));
 
-// タスクの設定
-gulp.task("browserSyncTask", function (done) {
-  browserSync({
-    server: {
-      baseDir: "src", // ルートとなるディレクトリを指定
-    },
-  });
+// プラグインの処理をまとめる
+const cssSass = () => {
+  return src('_dev/scss/*.scss') //コンパイル元
+    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(dest('src/css'))     //コンパイル先
+}
 
-  // srcフォルダ以下のファイルを監視
-  gulp.watch("src/**", function (done) {
-    browserSync.reload(); // ファイルに変更があれば同期しているブラウザをリロード
-    done(); //追加
-  });
-});
+// タスクをまとめて実行
+exports.default = series(cssSass);
+
+
+exports.watch = function() {
+    watch('_dev/scss/*.scss', cssSass);
+}
