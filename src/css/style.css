@@ -662,25 +662,25 @@ li {
 }
 
 .test {
-  color: tomato;
+  color: rgb(255, 38, 0);
   font-size: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .test {
-    color: blue;
+    color: rgb(14, 14, 125);
     font-size: 1.875rem;
   }
 }
 @media (any-hover: hover) {
   .test:hover {
-    color: green;
+    color: rgb(0, 255, 0);
   }
 }
 .test:focus-visible {
-  color: green;
+  color: rgb(0, 255, 0);
 }
 .test:active {
-  color: green;
+  color: rgb(0, 255, 0);
 }
 
 .section-01 {

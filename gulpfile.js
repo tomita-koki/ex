@@ -1,25 +1,19 @@
-/*
-src 参照元を指定
-dest 出力先を指定
-watch ファイル監視
-series(直列処理)と(並列処理)
-*/
-const { gulp, src, dest, watch, series} = require('gulp');
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
 
-// プラグインを呼び出し
-var sass = require('gulp-sass')(require('sass'));
+// Sassのコンパイルタスク
+gulp.task('cssSass', function () {
+    return gulp.src('_dev/scss/**/*.scss')  // すべてのSCSSファイルを対象に
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('src/css'));
+});
 
-// プラグインの処理をまとめる
-const cssSass = () => {
-  return src('_dev/scss/*.scss') //コンパイル元
-    .pipe(sass({ outputStyle: 'expanded' }))
-    .pipe(dest('src/css'))     //コンパイル先
-}
+// ウォッチタスク（変更を監視してcssSassタスクを実行）
+gulp.task('watch', function () {
+    gulp.watch('_dev/scss/**/*.scss', gulp.series('cssSass'));  
+});
 
-// タスクをまとめて実行
-exports.default = series(cssSass);
+// デフォルトタスクでwatchを実行
+gulp.task('default', gulp.series('cssSass', 'watch'));
 
 
-exports.watch = function() {
-    watch('_dev/scss/*.scss', cssSass);
-}
