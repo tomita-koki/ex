@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "browser-sync start --server src",
-    "gulp": "npx gulp"
+    "start": "npx gulp"
   },
   "keywords": [],
   "author": "",

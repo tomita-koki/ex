@@ -667,20 +667,20 @@ li {
 }
 @media screen and (min-width: 768px) {
   .test {
-    color: rgb(14, 14, 125);
+    color: rgb(0, 255, 255);
     font-size: 1.875rem;
   }
 }
 @media (any-hover: hover) {
   .test:hover {
-    color: rgb(0, 255, 0);
+    color: rgb(55, 159, 55);
   }
 }
 .test:focus-visible {
-  color: rgb(0, 255, 0);
+  color: rgb(55, 159, 55);
 }
 .test:active {
-  color: rgb(0, 255, 0);
+  color: rgb(55, 159, 55);
 }
 
 .section-01 {
