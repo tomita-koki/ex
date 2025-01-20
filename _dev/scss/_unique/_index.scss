@@ -167,3 +167,118 @@
     }
   }
  }
+
+.kokiHeader {
+  margin: 31px 25px 0;
+
+  @include media-query {
+    margin: 84px 120px 0;
+  }
+
+  &__inner {
+    display: none;
+
+    @include media-query {
+      border-radius: 10px;
+      background-color: var(--COLOR_BOX);
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .3);
+      text-align: center;
+      display: inline-block;
+      padding: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+   }
+
+   &__text {
+      color: #908282;
+      font-weight: bold;
+      position: relative;
+      transition: all .3s ease;
+
+      @include hover {
+        color: #FDB0A3;
+      }
+
+      @include hover {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          background-color: #FEF4E7;
+          border-radius: 50%;
+          z-index: -10;
+        }
+      }
+    }
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #c61212;
+  margin: 0 0 0 auto;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--COLOR_FONT);
+    border-radius: 2px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--COLOR_FONT);
+    border-radius: 2px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include media-query {
+    display: none;
+  }
+
+  &__line {
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--COLOR_FONT);
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__caption {
+    color: var(--COLOR_FONT);
+    display: flex;
+    justify-content: flex-end;
+    font-size: px-to-rem(10);
+    margin-right: .15rem;
+  }
+}
