@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   /* font */
   --FONT_FAMILY: "Yu Gothic", sans-serif;
@@ -829,7 +830,7 @@ li {
 }
 
 .kokiHeader {
-  margin: 31px 25px 0;
+  margin: 32px 32px 0px;
 }
 @media screen and (min-width: 768px) {
   .kokiHeader {
@@ -838,6 +839,7 @@ li {
 }
 .kokiHeader__inner {
   display: none;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .kokiHeader__inner {
@@ -851,10 +853,38 @@ li {
 }
 .kokiHeader__nav {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  z-index: 10;
+  width: 100%;
+  transition: all 0.5s ease;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .kokiHeader__nav {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+}
+.kokiHeader__item {
+  padding-bottom: 8px;
+  border-bottom: 3px #FDB0A3 dotted;
+  text-align: center;
+  width: 100%;
+}
+.kokiHeader__item:last-of-type {
+  border-bottom: none;
+}
+@media screen and (min-width: 768px) {
+  .kokiHeader__item {
+    padding-bottom: 0;
+    border-bottom: none;
+    width: fit-content;
+  }
 }
 .kokiHeader__text {
   color: #908282;
@@ -915,42 +945,49 @@ li {
   z-index: -10;
 }
 
-.hamburger {
-  position: relative;
+.kokiHeader.active .kokiHeader__inner {
   display: block;
-  width: 40px;
-  height: 40px;
-  background-color: #c61212;
-  margin: 0 0 0 auto;
 }
-.hamburger::before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 2px;
-  background-color: var(--COLOR_FONT);
-  border-radius: 2px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
+.kokiHeader.active .kokiHeader__nav {
+  position: fixed;
+  top: 86px;
+  left: 0;
 }
-.hamburger::after {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 2px;
-  background-color: var(--COLOR_FONT);
-  border-radius: 2px;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translateX(-50%);
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 @media screen and (min-width: 768px) {
   .hamburger {
     display: none;
   }
+}
+.hamburger__btn {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 auto;
+}
+.hamburger__btn::before, .hamburger__btn::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--COLOR_FONT);
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+.hamburger__btn::before {
+  top: 30%;
+}
+.hamburger__btn::after {
+  top: 65%;
 }
 .hamburger__line {
   display: inline-block;
@@ -965,8 +1002,67 @@ li {
 }
 .hamburger__caption {
   color: var(--COLOR_FONT);
-  display: flex;
-  justify-content: flex-end;
   font-size: 0.625rem;
   margin-right: 0.15rem;
+}
+
+.hamburger.active {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 32px 32px 0;
+}
+.hamburger.active .hamburger__btn {
+  background-color: #fff;
+}
+.hamburger.active .hamburger__btn::before {
+  transform: rotate(45deg);
+  top: 46%;
+  left: 30%;
+}
+.hamburger.active .hamburger__btn::after {
+  transform: rotate(-45deg);
+  top: 46%;
+  left: 30%;
+}
+.hamburger.active .hamburger__btn .hamburger__line {
+  display: none;
+}
+.hamburger.active .hamburger__line {
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--COLOR_FONT);
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hamburger.active .hamburger__caption {
+  color: var(--COLOR_FONT);
+  font-size: 0.625rem;
+  margin-right: 0.15rem;
+}
+
+.background {
+  display: none;
+}
+
+.background.active {
+  display: block;
+  position: fixed; /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+  z-index: 5; /* 最前面に */
+}
+
+.main {
+  padding-top: 120px;
 }
