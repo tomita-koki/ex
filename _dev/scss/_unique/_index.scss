@@ -172,7 +172,7 @@
   margin: 32px 32px 0px;
   
   @include media-query {
-    margin: 84px 120px 0;
+    margin: 84px 120px 32px;
   }
 
   &__inner {
@@ -228,17 +228,30 @@
     }
 
    &__text {
-      color: #908282;
+      color: var(--COLOR_FONT);
       font-weight: bold;
       position: relative;
+      z-index: 0;
       transition: all .3s ease;
+
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+      //   display: inline-block;
+      //   width: 32px;
+      //   height: 32px;
+      //   background-color: #fb9c0c;
+      //   border-radius: 50%;
+      //   z-index: -1;
+      // }
 
       @include hover {
         color: #FDB0A3;
-      }
 
-      @include hover {
-        &::before {
+        &::after {
           content: "";
           position: absolute;
           top: 50%;
@@ -249,7 +262,7 @@
           height: 32px;
           background-color: #FEF4E7;
           border-radius: 50%;
-          z-index: -10;
+          z-index: -1;
         }
       }
     }
@@ -393,6 +406,29 @@
   z-index: 5; /* 最前面に */
 }
 
-.main {
-  padding-top: 120px;
+
+.main-visual {
+  margin-bottom: 64px;
+
+  @include media-query {
+    margin-bottom: 32px;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("/images/img-dummy.png") center center / cover no-repeat;
+  }
+
+  &__content {
+    padding: 200px 0px 0px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    font-size: px-to-rem(48);
+  }
 }
