@@ -1,0 +1,18 @@
+@use '../../_foundation/' as *;
+
+.m-heading-02 {
+    margin: 0 auto 64px;
+
+    &__inner {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    &__text {
+        color: var(--COLOR_FONT);
+        font-size: px-to-rem(32);
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: 8px dotted var(--COLOR_BTN);
+    }
+}

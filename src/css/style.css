@@ -7,7 +7,8 @@
   --COLOR_SECONDARY: #ddd;
   --COLOR_FONT: #666666;
   --COLOR_STRONG: #e11515;
-  --COLOR_BTN: #d7bbcc;
+  --COLOR_BTN: #FDB0A3;
+  --COLOR_BTN2: #D88273;
   /* width */
   --FONT_SIZE: px-to-rem(16);
   /* width */
@@ -205,6 +206,21 @@ li {
   list-style: none;
 }
 
+.m-heading-02 {
+  margin: 0 auto 64px;
+}
+.m-heading-02__inner {
+  width: fit-content;
+  margin: 0 auto;
+}
+.m-heading-02__text {
+  color: var(--COLOR_FONT);
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 8px dotted var(--COLOR_BTN);
+}
+
 .m-text {
   color: #000;
 }
@@ -350,9 +366,13 @@ li {
   text-align: center;
 }
 
+.m-media {
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
 .fp-btn {
   padding-top: 40px;
-  text-align: center;
 }
 .fp-btn__inner {
   display: inline-block;
@@ -362,7 +382,7 @@ li {
   max-width: fit-content;
   min-width: 224px;
   width: 100%;
-  box-shadow: 0 4px 0 var(--COLOR_SECONDARY);
+  box-shadow: 0 4px 0 var(--COLOR_BTN2);
   transition: box-shadow ease 0.3s, transform ease 0.3s;
   padding: 15px 40px;
 }
@@ -1072,6 +1092,7 @@ li {
 }
 .main-visual__inner {
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
   background: url("/images/img-dummy.png") center center/cover no-repeat;
@@ -1084,4 +1105,61 @@ li {
 }
 .main-visual__text {
   font-size: 3rem;
+}
+
+.main-visual-btn {
+  padding-top: 70px;
+  padding-left: 120px;
+}
+.main-visual-btn__inner {
+  display: inline-block;
+  background-color: var(--COLOR_BTN);
+  text-decoration: none;
+  border-radius: 40px;
+  max-width: fit-content;
+  min-width: 224px;
+  width: 100%;
+  box-shadow: 0 4px 0 var(--COLOR_BTN2);
+  transition: box-shadow ease 0.3s, transform ease 0.3s;
+  padding: 15px 40px;
+}
+@media (any-hover: hover) {
+  .main-visual-btn__inner:hover {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+}
+.main-visual-btn__inner:focus-visible {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.main-visual-btn__inner:active {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.main-visual-btn__text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--COLOR_PRIMARY);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.main-visual-btn__text::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("/images/img-arrow.png") center center/cover no-repeat;
+}
+
+.container {
+  padding: 0 40px;
+  margin: auto;
+  max-width: 1280px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
 }

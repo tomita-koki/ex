@@ -2,7 +2,6 @@
 
 .fp-btn {
     padding-top: 40px;
-    text-align: center;
   
     &__inner {
       display: inline-block;
@@ -12,7 +11,7 @@
       max-width: fit-content;
       min-width: 224px;
       width: 100%;
-      box-shadow: 0 4px 0 var(--COLOR_SECONDARY);
+      box-shadow: 0 4px 0 var(--COLOR_BTN2);
       transition: box-shadow ease .3s, transform ease .3s;
       padding: 15px 40px;
   
