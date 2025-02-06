@@ -19,3 +19,17 @@
     }
   }
 }
+
+.m-box {
+  margin: 0 120px 64px;
+
+  &__inner {
+    background-color: var(--COLOR_BOX);
+    width: 100%;
+    border-radius: 32px;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

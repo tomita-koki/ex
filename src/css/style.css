@@ -9,6 +9,7 @@
   --COLOR_STRONG: #e11515;
   --COLOR_BTN: #FDB0A3;
   --COLOR_BTN2: #D88273;
+  --COLOR_BOX: #FEF4E7;
   /* width */
   --FONT_SIZE: px-to-rem(16);
   /* width */
@@ -360,6 +361,19 @@ li {
   .fp-box__title {
     font-size: 1.875rem;
   }
+}
+
+.m-box {
+  margin: 0 120px 64px;
+}
+.m-box__inner {
+  background-color: var(--COLOR_BOX);
+  width: 100%;
+  border-radius: 32px;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .fp-image {
@@ -1162,4 +1176,8 @@ li {
   .container {
     padding: 0 16px;
   }
+}
+
+.section01 {
+  margin-bottom: 160px;
 }
