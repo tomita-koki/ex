@@ -23,4 +23,33 @@
         }
       }
     }
+}
+
+.m-lyt-media {
+  $_this: &;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 40px;
+
+    @include media-query {
+      flex-direction: row;
+    }
   }
+
+  &--reverse {
+    #{$_this}__inner {
+      flex-direction: column-reverse;
+
+      @include media-query {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__media {
+    width: 100%;
+    height: 100%;
+  }
+}
