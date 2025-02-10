@@ -22,6 +22,7 @@
 
 .m-box {
   margin: 0 120px 64px;
+  text-align: center;
 
   &__inner {
     background-color: var(--COLOR_BOX);
@@ -31,5 +32,9 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    & [class^="m-"]:last-child {
+      margin: 0;
+    }
   }
 }
