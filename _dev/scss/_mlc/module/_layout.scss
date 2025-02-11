@@ -31,10 +31,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 20px 40px;
-
+    row-gap: 32px;
+    
     @include media-query {
       flex-direction: row;
+      column-gap: 24px;
     }
   }
 
@@ -49,17 +50,53 @@
   }
 
   &__media {
+    text-align: center;
     width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    min-width: 200px;
   }
 }
 
 .m-card {
   margin-bottom: 40px;
+  @include media-query {
+    margin-bottom: 80px;
+  }
 
   &__inner {
     display: grid;
-    grid-template-rows: auto 3fr;
-    gap: 32px 64px;
+    grid-template-columns: 1fr;
+    grid-row-gap: 64px;
+    justify-items: center;
+
+    @include media-query {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 32px;
+      grid-row-gap: 64px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: px-to-rem(24);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__images {
+    max-width: 120px;
+    max-height: 120px;
+    min-width: 120px;
+    min-height: 120px;
   }
 }

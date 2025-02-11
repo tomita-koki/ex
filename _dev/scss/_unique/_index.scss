@@ -181,7 +181,6 @@
     
     @include media-query {
       border-radius: 10px;
-      background-color: var(--COLOR_BOX);
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .3);
       text-align: center;
       display: inline-block;
@@ -406,6 +405,9 @@
   z-index: 5; /* 最前面に */
 }
 
+.body {
+  font-weight: bold;
+}
 
 .main-visual {
   margin-bottom: 64px;
@@ -475,15 +477,19 @@
 }
 
 .container {
-  padding: 0 40px;
+  padding: 0 16px;
   margin: auto;
   max-width: 1280px;
 
   @include media-query {
-      padding: 0 16px;
+      padding: 0 120px;
   }
 }
 
 .section01 {
   margin-bottom: 160px;
+
+  & [class^="m-"]:last-child {
+    margin-bottom: 0;
+  }
 }

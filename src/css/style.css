@@ -364,20 +364,29 @@ li {
 }
 
 .m-box {
-  margin: 0 120px 64px;
-  text-align: center;
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .m-box {
+    margin-bottom: 64px;
+  }
 }
 .m-box__inner {
   background-color: var(--COLOR_BOX);
   width: 100%;
   border-radius: 32px;
-  padding: 64px;
+  padding: 40px 16px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 .m-box__inner [class^=m-]:last-child {
-  margin: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .m-box__inner {
+    padding: 64px;
+  }
 }
 
 .fp-image {
@@ -463,6 +472,7 @@ li {
 
 .m-btn {
   margin-bottom: 40px;
+  text-align: center;
 }
 .m-btn__inner {
   display: inline-block;
@@ -529,11 +539,12 @@ li {
 .m-lyt-media__inner {
   display: flex;
   flex-direction: column;
-  gap: 20px 40px;
+  row-gap: 32px;
 }
 @media screen and (min-width: 768px) {
   .m-lyt-media__inner {
     flex-direction: row;
+    column-gap: 24px;
   }
 }
 .m-lyt-media--reverse .m-lyt-media__inner {
@@ -545,17 +556,52 @@ li {
   }
 }
 .m-lyt-media__media {
+  text-align: center;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  min-width: 200px;
 }
 
 .m-card {
   margin-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .m-card {
+    margin-bottom: 80px;
+  }
+}
 .m-card__inner {
   display: grid;
-  grid-template-rows: auto 3fr;
-  gap: 32px 64px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 64px;
+  justify-items: center;
+}
+@media screen and (min-width: 768px) {
+  .m-card__inner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 64px;
+  }
+}
+.m-card__item {
+  text-align: center;
+}
+.m-card__title {
+  margin-bottom: 32px;
+  font-size: 1.5rem;
+}
+.m-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.m-card__images {
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 120px;
+  min-height: 120px;
 }
 
 .hidden {
@@ -959,7 +1005,6 @@ li {
 @media screen and (min-width: 768px) {
   .kokiHeader__inner {
     border-radius: 10px;
-    background-color: var(--COLOR_BOX);
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
     text-align: center;
     display: inline-block;
@@ -1177,6 +1222,10 @@ li {
   z-index: 5; /* 最前面に */
 }
 
+.body {
+  font-weight: bold;
+}
+
 .main-visual {
   margin-bottom: 64px;
 }
@@ -1249,16 +1298,19 @@ li {
 }
 
 .container {
-  padding: 0 40px;
+  padding: 0 16px;
   margin: auto;
   max-width: 1280px;
 }
 @media screen and (min-width: 768px) {
   .container {
-    padding: 0 16px;
+    padding: 0 120px;
   }
 }
 
 .section01 {
   margin-bottom: 160px;
+}
+.section01 [class^=m-]:last-child {
+  margin-bottom: 0;
 }
