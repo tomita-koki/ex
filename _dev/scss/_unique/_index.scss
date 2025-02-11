@@ -420,7 +420,6 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
     background: url("/images/img-dummy.png") center center / cover no-repeat;
   }
 
@@ -434,13 +433,12 @@
   &__text {
     font-size: px-to-rem(48);
   }
-}
 
-.main-visual-btn {
-  padding-top: 70px;
-  padding-left: 120px;
-
-  &__inner {
+  &__btn {
+    padding-top: 70px;
+    padding-left: 120px;
+  }
+  &__btnInner {
     display: inline-block;
     background-color: var(--COLOR_BTN);
     text-decoration: none;
@@ -458,7 +456,7 @@
     }
   }
 
-  &__text {
+  &__btnText {
     font-size: px-to-rem(24);
     font-weight: bold;
     color: var(--COLOR_PRIMARY);
@@ -473,6 +471,10 @@
       height: 32px;
       background: url("/images/img-arrow.png") center center / cover no-repeat;
     }
+  }
+
+  &__wave {
+    margin-bottom: -6px;
   }
 }
 

@@ -1238,7 +1238,6 @@ li {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
   background: url("/images/img-dummy.png") center center/cover no-repeat;
 }
 .main-visual__content {
@@ -1250,12 +1249,11 @@ li {
 .main-visual__text {
   font-size: 3rem;
 }
-
-.main-visual-btn {
+.main-visual__btn {
   padding-top: 70px;
   padding-left: 120px;
 }
-.main-visual-btn__inner {
+.main-visual__btnInner {
   display: inline-block;
   background-color: var(--COLOR_BTN);
   text-decoration: none;
@@ -1268,20 +1266,20 @@ li {
   padding: 15px 40px;
 }
 @media (any-hover: hover) {
-  .main-visual-btn__inner:hover {
+  .main-visual__btnInner:hover {
     box-shadow: none;
     transform: translateY(4px);
   }
 }
-.main-visual-btn__inner:focus-visible {
+.main-visual__btnInner:focus-visible {
   box-shadow: none;
   transform: translateY(4px);
 }
-.main-visual-btn__inner:active {
+.main-visual__btnInner:active {
   box-shadow: none;
   transform: translateY(4px);
 }
-.main-visual-btn__text {
+.main-visual__btnText {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--COLOR_PRIMARY);
@@ -1289,12 +1287,15 @@ li {
   align-items: center;
   gap: 12px;
 }
-.main-visual-btn__text::before {
+.main-visual__btnText::before {
   content: "";
   display: inline-block;
   width: 32px;
   height: 32px;
   background: url("/images/img-arrow.png") center center/cover no-repeat;
+}
+.main-visual__wave {
+  margin-bottom: -6px;
 }
 
 .container {
