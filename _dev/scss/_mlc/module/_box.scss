@@ -21,6 +21,7 @@
 }
 
 .m-box {
+  $_this: &;
   margin-bottom: 32px;
 
   @include media-query {
@@ -42,6 +43,27 @@
     
     @include media-query {
       padding: 64px;
+    }
+  }
+
+  &--color01 {
+    #{$_this}__inner {
+      background-color: #FEF2EE;
+      border-radius: 24px;
+    }
+  }
+
+  &--color02 {
+    #{$_this}__inner {
+      background-color: #ECF5F5;
+      border-radius: 24px;
+    }
+  }
+
+  &--color03 {
+    #{$_this}__inner {
+      background-color: #EEFBE7;
+      border-radius: 24px;
     }
   }
 }

@@ -489,9 +489,28 @@
 }
 
 .section01 {
-  margin-bottom: 160px;
+  margin-bottom: 120px;
+
+  @include media-query {
+    margin-bottom: 160px;
+  }
 
   & [class^="m-"]:last-child {
     margin-bottom: 0;
+  }
+}
+
+.section02 {
+  margin-bottom: 120px;
+  background-color:var(--COLOR_BOX);
+
+  @include media-query {
+    margin-bottom: 160px;
+    margin-left: -120px;
+    margin-right: -120px;
+  }
+
+  &__inner {
+    margin: 120px;
   }
 }
