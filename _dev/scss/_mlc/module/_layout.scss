@@ -142,3 +142,23 @@
     min-height: 120px;
   }
 }
+
+.m-lyt-column {
+  margin-bottom: 40px;
+  @include media-query {
+    margin-bottom: 80px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 64px;
+    justify-items: center;
+
+    @include media-query {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 32px;
+      grid-row-gap: 64px;
+    }
+  }
+}
