@@ -383,14 +383,14 @@ li {
   padding: 40px 16px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
 }
 .m-box__inner [class^=m-]:last-child {
   margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
   .m-box__inner {
-    padding: 64px;
+    padding: 40px 32px;
   }
 }
 .m-box--color01 .m-box__inner {
@@ -614,6 +614,47 @@ li {
   gap: 24px;
 }
 .m-card__images {
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.m-order {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .m-order {
+    margin-bottom: 80px;
+  }
+}
+.m-order__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 64px;
+  justify-items: center;
+}
+@media screen and (min-width: 768px) {
+  .m-order__inner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 64px;
+  }
+}
+.m-order__item {
+  text-align: center;
+}
+.m-order__title {
+  margin-bottom: 32px;
+  font-size: 1.5rem;
+}
+.m-order__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.m-order__images {
   max-width: 120px;
   max-height: 120px;
   min-width: 120px;

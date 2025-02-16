@@ -35,14 +35,14 @@
     padding: 40px 16px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 16px;
     
     & [class^="m-"]:last-child {
       margin-bottom: 0;
     }
     
     @include media-query {
-      padding: 64px;
+      padding: 40px 32px;
     }
   }
 
