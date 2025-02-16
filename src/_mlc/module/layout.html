@@ -4,35 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/style.css">
-<script src="/js/main.js"></script>
-<title>ボックスモジュール</title>
+<script src="/js/main.js" defer></script>
+<title>レイアウトモジュール</title>
+<description></description>
 </head>
-<body>
-<div class="section-01">
-    <div class="section-01__inner">
-        <h1>レイアウトモジュール</h1>
-        <div class="fp-box fp-box--color">
-            <div class="fp-box__inner">
-            <div class="fp-lyt-media fp-lyt-media--reverse">
-            <div class="fp-lyt-media__inner">
+<body class="body">
+<header class="kokiHeader">
+    <div class="hamburger" id="hamburger">
+        <button class="hamburger__btn" id="hamburger__btn">
+            <div class="hamburger__line"></div>
+        </button>
+        <div class="hamburger__caption">メニュー</div>
+    </div>
+    <div class="kokiHeader__inner">
+        <ul class="kokiHeader__nav">
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">お金に関する不安</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">ライフイベントのご相談</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">選ばれる３つの理由</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">お客様の声</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">ご利用の声</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">ファナンシャルプランナーのご紹介</a></li>
+            <li class="kokiHeader__item"><a href="" class="kokiHeader__text">よくある質問</a></li>
+        </ul>
+    </div>
+    <div class="background"></div>
+</header>
+<main class="main">
+    <div class="container">
+        <div class="m-heading-02">
+            <div class="m-heading-02__inner">
+                <h2 class="m-heading-02__text">レイアウトモジュール</h2>
+            </div>
+        </div><!-- /.m-heading-02 -->
+        <div class="m-lyt-media">
+            <div class="m-lyt-media__inner">
             <p class="fp-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             
-            <div class="fp-lyt-media__media">
-            <img src="/images/img-dummy.png" width="320" height="191" loading="lazy" alt="$$$dummyAlt$$$" class="fp-lyt-media__mediaImg">
+            <div class="m-lyt-media__media">
+            <img src="/images/img-dummy.png" width="320" height="191" loading="lazy" alt="$$$dummyAlt$$$" class="m-lyt-media__mediaImg">
             </div><!-- /.fp-lyt-media__media -->
             </div><!-- /.fp-lyt-media__inner -->
-            </div><!-- /.fp-lyt-media -->
-            <div class="fp-btn">
-            <a href="$$$dummyLink$$$" class="fp-btn__inner">
-            <span class="fp-btn__text">テキストテキスト</span></a>
-            </div><!-- /.fp-btn -->
-            </div><!-- /.fp-box_inner -->
-        </div><!-- /.fp-box -->
-    </div><!-- /.section__inner -->
-</div><!-- /.section-01 -->
-<div class="section-01">
-    <div class="section-01__inner">
-        <h1>カードモジュール</h1>
+        </div><!-- /.fp-lyt-media -->
+        <div class="m-lyt-media m-lyt-media--reverse">
+            <div class="m-lyt-media__inner">
+            <p class="fp-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            
+            <div class="m-lyt-media__media">
+            <img src="/images/img-dummy.png" width="320" height="191" loading="lazy" alt="$$$dummyAlt$$$" class="m-lyt-media__mediaImg">
+            </div><!-- /.fp-lyt-media__media -->
+            </div><!-- /.fp-lyt-media__inner -->
+        </div><!-- /.fp-lyt-media -->
+        <div class="m-heading-02">
+            <div class="m-heading-02__inner">
+                <h2 class="m-heading-02__text">カードモジュール</h2>
+            </div>
+        </div><!-- /.m-heading-02 -->
         <div class="m-card">
             <div class="m-card__inner">
                 <img src="/images/img-dummy.png" alt="">
@@ -41,11 +67,10 @@
                 <img src="/images/img-dummy.png" alt="">
                 <img src="/images/img-dummy.png" alt="">
                 <img src="/images/img-dummy.png" alt="">
-                <img src="/images/img-dummy.png" alt="">
             </div>
         </div><!-- /.m-card -->
-    </div><!-- /.section__inner -->
-</div><!-- /.section-01 -->
-
+    </div><!-- /.container -->
+</main>
+<footer></footer>
 </body>
 </html>
