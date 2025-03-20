@@ -501,16 +501,23 @@
 }
 
 .section02 {
-  margin-bottom: 120px;
   background-color:var(--COLOR_BOX);
+  width: 100vw;
+  margin: 0 calc(50% - 50vw) 120px;
 
   @include media-query {
-    margin-bottom: 160px;
-    margin-left: -120px;
-    margin-right: -120px;
+    margin: 0 calc(50% - 50vw) 160px;
   }
 
   &__inner {
-    margin: 120px;
+    padding: 120px;
+
+    & [class^="m-"]:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wave {
+    margin-bottom: -7px;
   }
 }
