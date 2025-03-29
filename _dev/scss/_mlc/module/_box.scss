@@ -66,6 +66,17 @@
       border-radius: 24px;
     }
   }
+
+  &--color04 {
+    #{$_this}__inner {
+      background-color: var(--COLOR_PRIMARY);
+      border-radius: 24px;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
 }
 
 .m-card {
@@ -156,9 +167,9 @@
       height: 20px;
       position: absolute;
       top: none;
-      right: 45%;
+      right: 50%;
       bottom: -15%;
-      transform: translateX(-50%) rotate(0deg);
+      transform: translateX(50%) rotate(0deg);
       background-image: url(/images/icon-triangle.png);
       background-repeat: no-repeat;
       
@@ -227,5 +238,95 @@
     max-height: 120px;
     min-width: 120px;
     min-height: 120px;
+  }
+}
+
+.m-accordon {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include media-query {
+    margin-bottom: 80px;
+  }
+
+  &__summary {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__summaryIcon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--COLOR_BTN3);
+    position: relative;
+
+    @include media-query {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__summaryIcontext {
+    color: var(--COLOR_PRIMARY);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: px-to-rem(24);
+  }
+  
+  &__contentInner {
+    border-radius: 24px;
+    background-color: var(--COLOR_BOX);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include media-query {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__contentIcon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    background-color: var(--COLOR_BTN);
+    position: relative;
+
+    @include media-query {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      min-height: 64px;
+    }
+  }
+
+  &__contentIcontext {
+    color: var(--COLOR_PRIMARY);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: px-to-rem(24);
+
+    @include media-query {
+      font-size: px-to-rem(32);
+    }
   }
 }
