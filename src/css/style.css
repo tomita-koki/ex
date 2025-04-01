@@ -619,7 +619,7 @@ li {
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
 }
 @media screen and (min-width: 768px) {
   .m-accordon {
@@ -701,6 +701,25 @@ li {
   .m-accordon__contentIcontext {
     font-size: 2rem;
   }
+}
+
+.m-accordon[open] {
+  gap: 24px;
+}
+
+.m-accordonList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .m-accordonList {
+    margin-bottom: 80px;
+  }
+}
+.m-accordonList .m-accordon {
+  margin-bottom: 0;
 }
 
 .fp-image {

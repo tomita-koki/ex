@@ -245,7 +245,7 @@
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
 
   @include media-query {
     margin-bottom: 80px;
@@ -328,5 +328,24 @@
     @include media-query {
       font-size: px-to-rem(32);
     }
+  }
+}
+
+.m-accordon[open] {
+  gap: 24px;
+}
+
+.m-accordonList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+    
+  @include media-query {
+    margin-bottom: 80px;
+  }
+
+  & .m-accordon {
+    margin-bottom: 0;
   }
 }
