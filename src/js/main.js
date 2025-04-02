@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({
         scrollTrigger:{
         trigger:'.circle',
-        start:'top 30%',
+        start:'top 70%',
     }});
     tl
     .fromTo('.message__content > *',{autoAlpha:0,y:20},{autoAlpha:1,y:0,stagger:.3})

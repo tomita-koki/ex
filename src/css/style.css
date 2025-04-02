@@ -1205,24 +1205,41 @@ li {
   position: relative;
 }
 
+.message__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .message__title {
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
   font-family: "Signika Negative";
+}
+
+.message__image {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.message__imageInner {
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
 .message__text {
   font-size: 18px;
   text-align: center;
   font-family: "Signika Negative";
-  margin-top: 24px;
 }
 
 /* ===============================================
 # circle
 =============================================== */
 .gradient-circle-container {
-  max-width: 580px;
+  max-width: 780px;
   width: 100%;
   height: auto;
   position: absolute;
@@ -1236,7 +1253,7 @@ li {
 
 .gradient-stroke-circle {
   fill: none; /* 塗りつぶしをなしにする */
-  stroke-width: 50; /* 円の線の太さ50 */
+  stroke-width: 30; /* 円の線の太さ50 */
   stroke-dasharray: 1060 1413; /* 円の線のスタイルを指定。ここでは、線を75%(1060)と円周を(1413)に設定 */
   stroke-linecap: round; /* 円の線端を丸くする */
   /* transform: rotate(-90deg); /* 円を-90度回転させる 反転させたいときに使用 */
