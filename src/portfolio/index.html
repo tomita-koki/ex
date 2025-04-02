@@ -52,6 +52,35 @@
                     <h2 class="m-heading-02__text">Webサイトに関する悩みはありませんか？</h2>
                 </div>
             </div><!-- /.m-heading-02 -->
+            <div class="circle">
+                <div class="message">
+                  <!-- 円弧 -->
+                  <svg class="gradient-circle-container" width="500" height="500" viewBox="0 0 500 500">
+                    <defs>
+                      <!-- グラデーションの始点(x1,y1)　終点(x2,y2) -->
+                      <linearGradient id="linear-gradient" x1="0" y1="0.5" x2="1"  y2="0.5">
+                        <!-- 始点の色 -->
+                        <stop offset="0" stop-color="#FD9BB8"></stop>
+                        <!-- 中間の色 -->
+                        <stop offset="0.5" stop-color="#CF8BF3"></stop>
+                        <!-- 終点の色 -->
+                        <stop offset="1" stop-color="#A770EF"></stop>
+                      </linearGradient>
+                    </defs>
+                    <circle class="gradient-stroke-circle" cx="250" cy="250" r="225" stroke="url(#linear-gradient)"></circle>
+                  </svg>
+                  <!-- 文章エリア -->
+                  <div class="message__content">
+                      <h2 class="message__title">TITLE</h2>
+                      <p class="message__text">
+                          Lorem ipsum dolor sit amet,<br>
+                          consectetur adipiscing elit,<br>
+                          sed do eiusmod tempor incididunt<br>
+                          ut labore et dolore magna aliqua
+                      </p>
+                  </div>
+                </div>
+              </div>
             <div class="m-media">
                 <div class="m-media__inner">
                     <img src="https://placehold.jp/320x200.png" alt="" width="320" height="200" class="m-media__media">
@@ -319,5 +348,7 @@
     </div><!-- /.container -->
 </main>
 <footer></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 </body>
 </html>

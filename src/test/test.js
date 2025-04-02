@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded',function(){
+    gsap.registerPlugin(ScrollTrigger); // ← これが必要！
     const tl = gsap.timeline({
         scrollTrigger:{
         trigger:'.message',
