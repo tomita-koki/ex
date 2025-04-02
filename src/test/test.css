@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.intro{
+    font-size:40px;
+    text-align:center;
+}
+.circle {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 200px 0;
+    overflow: hidden;
+}
+
+/* ===============================================
+# message
+=============================================== */
+.message{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.message__title{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Signika Negative';
+}
+.message__text{
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Signika Negative';
+    margin-top: 24px;
+}
+/* ===============================================
+# circle
+=============================================== */
+.gradient-circle-container{
+    max-width: 580px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 40px;
+    z-index: -1;/*テキストを選択できるように */
+    transform-origin: center center;
+}
+.gradient-stroke-circle {
+    fill: none;/* 塗りつぶしをなしにする */
+    stroke-width: 50;/* 円の線の太さ50 */
+    stroke-dasharray: 1060 1413;/* 円の線のスタイルを指定。ここでは、線を75%(1060)と円周を(1413)に設定 */
+    stroke-linecap: round;/* 円の線端を丸くする */
+    /* transform: rotate(-90deg); /* 円を-90度回転させる 反転させたいときに使用 */
+    transform-origin: center center; /* 回転の中心点を円の中心に設定 */
+}
