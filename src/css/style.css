@@ -430,7 +430,7 @@ li {
   flex-direction: column;
   gap: 16px;
 }
-.m-box__inner [class^=m-]:last-child {
+.m-box__inner [class^=m-] {
   margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
@@ -878,6 +878,14 @@ li {
   }
 }
 
+.m-lyt-media {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .m-lyt-media {
+    margin-bottom: 80px;
+  }
+}
 .m-lyt-media__inner {
   display: flex;
   flex-direction: column;

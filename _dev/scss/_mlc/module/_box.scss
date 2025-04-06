@@ -37,7 +37,7 @@
     flex-direction: column;
     gap: 16px;
     
-    & [class^="m-"]:last-child {
+    & [class^="m-"] {
       margin-bottom: 0;
     }
     

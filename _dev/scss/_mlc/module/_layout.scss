@@ -27,6 +27,10 @@
 
 .m-lyt-media {
   $_this: &;
+  margin-bottom: 40px;
+  @include media-query {
+    margin-bottom: 80px;
+  }
 
   &__inner {
     display: flex;
