@@ -35,11 +35,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
+    gap: 24px;
     
     @include media-query {
       flex-direction: row;
-      column-gap: 24px;
+      gap: 32px;
     }
   }
 
@@ -53,11 +53,26 @@
     }
   }
 
+  &__text {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    
+    @include media-query {
+      width: 50%;
+      text-align: left;
+    }
+  }
+
   &__media {
     text-align: center;
-    width: 100%;
     margin: 0 auto;
-    min-width: 200px;
+    width: 100%;
+    
+    @include media-query {
+      width: 50%;
+      text-align: right;
+    }
   }
 }
 

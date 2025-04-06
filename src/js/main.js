@@ -223,12 +223,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-
+  /**
+   * circleアニメーション
+   */
   window.addEventListener('DOMContentLoaded',function(){
     gsap.registerPlugin(ScrollTrigger); // ← これが必要！
     const tl = gsap.timeline({
         scrollTrigger:{
-        trigger:'.circle',
+        trigger:'.m-circle',
         start:'top 70%',
     }});
     tl
