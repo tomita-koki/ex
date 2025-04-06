@@ -1459,6 +1459,11 @@ li {
     margin: 84px 120px 32px;
   }
 }
+@media screen and (min-width: 768px) {
+  .kokiHeader--nonePc {
+    display: none;
+  }
+}
 .kokiHeader__inner {
   display: none;
   width: 100%;

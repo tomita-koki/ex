@@ -175,6 +175,12 @@
     margin: 84px 120px 32px;
   }
 
+  &--nonePc {
+    @include media-query {
+      display: none;
+    }
+  }
+
   &__inner {
     display: none;
     width: 100%;
@@ -209,62 +215,62 @@
     }
    }
 
-   &__item {
-      padding-bottom: 8px;
-      border-bottom: 3px #FDB0A3 dotted;
-      text-align: center;
-      width: 100%;
+  &__item {
+    padding-bottom: 8px;
+    border-bottom: 3px #FDB0A3 dotted;
+    text-align: center;
+    width: 100%;
 
-      &:last-of-type {
-        border-bottom: none;
-      }
-      
-      @include media-query {
-        padding-bottom: 0;
-        border-bottom: none;
-        width: fit-content;
+    &:last-of-type {
+      border-bottom: none;
+    }
+    
+    @include media-query {
+      padding-bottom: 0;
+      border-bottom: none;
+      width: fit-content;
+    }
+  }
+
+  &__text {
+    color: var(--COLOR_FONT);
+    font-weight: bold;
+    position: relative;
+    z-index: 0;
+    transition: all .3s ease;
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   display: inline-block;
+    //   width: 32px;
+    //   height: 32px;
+    //   background-color: #fb9c0c;
+    //   border-radius: 50%;
+    //   z-index: -1;
+    // }
+
+    @include hover {
+      color: #FDB0A3;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: #FEF4E7;
+        border-radius: 50%;
+        z-index: -1;
       }
     }
-
-   &__text {
-      color: var(--COLOR_FONT);
-      font-weight: bold;
-      position: relative;
-      z-index: 0;
-      transition: all .3s ease;
-
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
-      //   display: inline-block;
-      //   width: 32px;
-      //   height: 32px;
-      //   background-color: #fb9c0c;
-      //   border-radius: 50%;
-      //   z-index: -1;
-      // }
-
-      @include hover {
-        color: #FDB0A3;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          display: inline-block;
-          width: 32px;
-          height: 32px;
-          background-color: #FEF4E7;
-          border-radius: 50%;
-          z-index: -1;
-        }
-      }
-    }
+  }
 }
 .kokiHeader.active {
   .kokiHeader__inner {
