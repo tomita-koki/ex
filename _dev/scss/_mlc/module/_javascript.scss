@@ -296,3 +296,25 @@
     /* transform: rotate(-90deg); /* 円を-90度回転させる 反転させたいときに使用 */
     transform-origin: center center; /* 回転の中心点を円の中心に設定 */
 }
+/* ===============================================
+# splide
+=============================================== */
+.loop-splide {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    @include media-query {
+        margin: 0 auto 80px;
+    }
+}
+
+.loop-splide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* スライド間のギャップを設定 */
+.splide__slide {
+    margin-right: 20px;
+}

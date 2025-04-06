@@ -238,3 +238,26 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo('.gradient-circle-container',{rotate:'-120deg',x:'-50%',y:'-50%'},{duration:1.5,rotate:'0deg',x:'-50%',y:'-50%'},'<')
     .fromTo('.gradient-stroke-circle',{autoAlpha:0,'stroke-dasharray':'0 1413'},{autoAlpha:1,'stroke-dasharray':'1060 1413',duration:1},'<')
 })
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let splide = new Splide('.loop-splide', {
+        type: 'loop',
+        drag: 'free',
+        focus: 'center',
+        perPage: 3,
+        autoScroll: {
+            speed: 2,
+        },
+        arrows: false,
+        pagination: false,
+        autoplay: true,
+        interval: 0,
+        speed: 30000,
+        easing: 'linear',
+        waitForTransition: false,
+        updateOnMove: true,
+    });
+
+    splide.mount();
+});

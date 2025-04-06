@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <script src="/js/main.js" defer></script>
 <title>koki's portfolio</title>
@@ -30,21 +31,7 @@
     <div class="background"></div>
 </header>
 <main class="main">
-    <div class="main-visual">
-        <div class="main-visual__inner">
-            <div class="main-visual__content">
-                <h1 class="main-visual__text">WEBサイト制作中….</h1>
-                <h1 class="main-visual__text">何でも作ります！！！！！！</h1>
-            </div>
-            <div class="main-visual__btn">
-                <a href="$$$dummyLink$$$" class="main-visual__btnInner">
-                <span class="main-visual__btnText">ご相談申し込みはこちら</span></a>
-            </div><!-- /.main-visual__btn -->
-            <div class="main-visual__wave">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,96L80,106.7C160,117,320,139,480,133.3C640,128,800,96,960,85.3C1120,75,1280,85,1360,90.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
-            </div><!-- /.main-visual-wave -->
-        </div>
-    </div>
+
     <div class="container">
         <div class="section01">
             <div class="m-circle">
@@ -86,6 +73,31 @@
                     <h2 class="m-heading-02__text">これまでの実績</h2>
                 </div>
             </div><!-- /.m-heading-02 -->
+            <div class="splide loop-splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="https://picsum.photos/400/250" alt="画像1">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="https://picsum.photos/400/251" alt="画像2">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="https://picsum.photos/400/252" alt="画像3">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="https://picsum.photos/400/253" alt="画像4">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="https://picsum.photos/400/254" alt="画像5">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-btn">
+                <a href="$$$dummyLink$$$" class="m-btn__inner">
+                <span class="m-btn__text">view more</span></a>
+            </div><!-- /.m-btn -->
         </div><!-- /.section-01 -->
         <div class="section01">
             <div class="m-heading-02">
@@ -98,19 +110,19 @@
                     <div class="m-media">
                         <div class="m-media__inner">
                             <img src="https://placehold.jp/120x120.png" alt="" width="120" height="120" class="m-media__media">
-                            <p class="m-media__text">デザイン</p>
+                            <p class="m-media__text">HTML</p>
                         </div><!-- /.m-media__inner -->
                     </div><!-- /.m-media -->
                     <div class="m-media">
                         <div class="m-media__inner">
                             <img src="https://placehold.jp/120x120.png" alt="" width="120" height="120" class="m-media__media">
-                            <p class="m-media__text">コーディング</p>
+                            <p class="m-media__text">CSS</p>
                         </div><!-- /.m-media__inner -->
                     </div><!-- /.m-media -->
                     <div class="m-media">
                         <div class="m-media__inner">
                             <img src="https://placehold.jp/120x120.png" alt="" width="120" height="120" class="m-media__media">
-                            <p class="m-media__text">CMS</p>
+                            <p class="m-media__text">Javascript</p>
                         </div><!-- /.m-media__inner -->
                     </div><!-- /.m-media -->
                 </div><!-- /.m-lyt-column__inner -->
@@ -142,6 +154,7 @@
     </div><!-- /.container -->
 </main>
 <footer></footer>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 </body>

@@ -6,7 +6,7 @@
 
 .m-media {
     margin: 0 auto 64px;
-    
+ 
     &__inner {
         text-align: center;
         display: flex;
@@ -19,3 +19,62 @@
         margin: 0 auto;
     }
 }
+
+.m-media-reverse {
+    margin: 0 auto 64px;
+ 
+    &__inner {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        &:hover {
+            background-color: #000;
+        }
+    }
+
+    &__media {
+        width: fit-content;
+        margin: 0 auto;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: rotateY(180deg);
+            background-color: #000;
+        }
+    }
+}
+
+.card {
+    width: 120px; /* 任意の横幅を指定 */
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* カード裏面・表面の共通スタイル */
+.card .back,
+.card .front {
+  transition: all 0.6s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+/* カード表面のスタイル */
+.card .front {
+  transform: rotateY(-180deg);
+}
+
+/* ホバー時のカード裏面 */
+.card:hover .back {
+    transform: rotateY(180deg);
+  }
+  
+  /* ホバー時のカード表面 */
+  .card:hover .front {
+    transform: rotateY(0);
+  }
