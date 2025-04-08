@@ -741,37 +741,12 @@ li {
 }
 
 .m-media-reverse {
-  margin: 0 auto 64px;
-}
-.m-media-reverse__inner {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.m-media-reverse__inner:hover {
-  background-color: #000;
-}
-.m-media-reverse__media {
-  width: fit-content;
-  margin: 0 auto;
-  transition: all 0.3s ease-in-out;
-}
-.m-media-reverse__media:hover {
-  transform: rotateY(180deg);
-  background-color: #000;
-}
-
-.card {
-  width: 120px; /* 任意の横幅を指定 */
+  width: 120px;
   height: 120px;
   position: relative;
   cursor: pointer;
 }
-
-/* カード裏面・表面の共通スタイル */
-.card .back,
-.card .front {
+.m-media-reverse__front, .m-media-reverse__back {
   transition: all 0.6s;
   position: absolute;
   left: 0;
@@ -780,20 +755,25 @@ li {
   width: 100%;
   backface-visibility: hidden;
 }
-
-/* カード表面のスタイル */
-.card .front {
+.m-media-reverse__front {
   transform: rotateY(-180deg);
 }
-
-/* ホバー時のカード裏面 */
-.card:hover .back {
+.m-media-reverse:hover .m-media-reverse__front {
+  transform: rotateY(0);
+}
+.m-media-reverse:hover .m-media-reverse__back {
   transform: rotateY(180deg);
 }
-
-/* ホバー時のカード表面 */
-.card:hover .front {
-  transform: rotateY(0);
+.m-media-reverse__frontContent {
+  background-color: #9a3b3b;
+  width: 100%;
+  height: 100%;
+  min-width: 120px;
+  min-height: 120px;
+  padding: 15px;
+}
+.m-media-reverse__frontText {
+  color: #ffffff;
 }
 
 .fp-btn {
