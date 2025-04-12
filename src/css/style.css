@@ -741,18 +741,26 @@ li {
 }
 
 .m-media-reverse {
-  width: 120px;
-  height: 120px;
-  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .m-media-reverse {
+    margin-bottom: 80px;
+  }
+}
+.m-media-reverse__inner {
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
 }
 .m-media-reverse__front, .m-media-reverse__back {
   transition: all 0.6s;
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
-  width: 100%;
   backface-visibility: hidden;
 }
 .m-media-reverse__front {
@@ -768,9 +776,17 @@ li {
   background-color: #9a3b3b;
   width: 100%;
   height: 100%;
-  min-width: 120px;
-  min-height: 120px;
+  min-width: 200px;
+  min-height: 200px;
   padding: 15px;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  display: 8px;
+}
+.m-media-reverse__frontTitle {
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 .m-media-reverse__frontText {
   color: #ffffff;
@@ -985,6 +1001,9 @@ li {
 }
 .m-lyt-column__inner > * {
   margin-bottom: 0;
+}
+.m-lyt-column__item {
+  width: 100%;
 }
 
 .m-lyt-column[data-column="1"] .m-lyt-column__inner {

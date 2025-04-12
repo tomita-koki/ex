@@ -22,10 +22,19 @@
 
 .m-media-reverse {
     $_this: &;
-    width: 120px;
-    height: 120px;
-    position: relative;
-    cursor: pointer;
+    text-align: center;
+    margin-bottom: 40px;
+    @include media-query {
+      margin-bottom: 80px;
+    }
+
+    &__inner {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+    }
 
     &__front,
     &__back {
@@ -33,8 +42,6 @@
         position: absolute;
         left: 0;
         top: 0;
-        height: 100%;
-        width: 100%;
         backface-visibility: hidden;
     }
 
@@ -55,9 +62,18 @@
         background-color: #9a3b3b;
         width: 100%;
         height: 100%;
-        min-width: 120px;
-        min-height: 120px;
+        min-width: 200px;
+        min-height: 200px;
         padding: 15px;
+        border-radius: 20%;
+        display: flex;
+        flex-direction: column;
+        display: 8px;
+    }
+
+    &__frontTitle {
+        font-size: px-to-rem(24);
+        color: #ffffff;
     }
 
     &__frontText {
