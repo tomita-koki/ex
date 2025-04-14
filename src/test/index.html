@@ -1,49 +1,757 @@
 <!DOCTYPE html>
 <html lang="ja">
+ 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./test.css">
-<title>koki's portfolio</title>
-<description></description>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width">
+ 
+  <title>GSAP DEMO</title>
+ 
+  <style>
+    @charset "UTF-8";
+    /*------------------------------------------------------------------------------
+  reset
+------------------------------------------------------------------------------*/
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+ 
+    /* :root {
+      --easing: cubic-bezier(0.2, 1, 0.2, 1);
+      --transition: 0.8s var(--easing);
+      --color-base: #f8f8f8;
+      --color-gray: #ddd;
+      --color-theme: #000;
+      --color-theme-darken: #f12617;
+      --box-shadow: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.05),
+        -0.8rem -0.8rem 1.2rem #fff;
+      --box-shadow-hover: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.08),
+        -1rem -1rem 1.5rem #fff;
+      --box-shadow-inset: inset 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.05),
+        inset -0.8rem -0.8rem 1.2rem #fff;
+      --box-shadow-dark: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.1),
+        -0.8rem -0.8rem 1.2rem rgba(#fff, 0.2);
+    }
+ 
+    html {
+      font-family: "Montserrat", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
+        "メイリオ", Meiryo, sans-serif;
+      font-size: 62.5%;
+      line-height: 1.8;
+      height: 100%;
+      word-break: break-word;
+      color: #333;
+      background-color: var(--color-base);
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+ 
+    body {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+ 
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+ 
+    ::-moz-selection {
+      color: #fff;
+      background: var(--color-theme);
+    }
+ 
+    ::selection {
+      color: #fff;
+      background: var(--color-theme);
+    }
+ 
+    img {
+      border: 0;
+      margin: 0;
+    }
+ 
+    figure {
+      margin: 0;
+    }
+ 
+    p {
+      margin: 0;
+      padding: 0;
+    }
+ 
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+ 
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+ 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 1.6rem;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    main {
+      display: block;
+      flex: 1;
+      padding-top: 12.2rem;
+    } */
+ 
+    .l-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+ 
+    .c-loader-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+ 
+    .c-loader-dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: start;
+      pointer-events: none;
+    }
+ 
+    .c-loader-dot>span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+ 
+    .c-loader-dot>span+span {
+      margin-left: 3rem;
+    }
+ 
+    .l-inner {
+      position: relative;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10rem;
+    }
+ 
+    .l-section {
+      border-top: 1px solid #eee;
+    }
+ 
+    .l-section .l-inner {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+ 
+    .c-temp {
+      line-height: 1;
+    }
+ 
+    .c-temp .l-inner {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+ 
+    .c-temp .text {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+ 
+    .c-temp .button {
+      font-size: 1.4rem;
+      font-weight: bold;
+      display: block;
+      width: 12rem;
+      padding: 1.6rem 0 1.2rem;
+      text-align: center;
+      letter-spacing: 0.1em;
+      color: #fff;
+      border-radius: 100px;
+      background-color: var(--color-theme);
+    }
+ 
+    .c-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+ 
+    .c-mv {
+      position: relative;
+      min-height: 78.3rem;
+      margin-left: 4rem;
+    }
+ 
+    .c-mv_bubble {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      top: 4.4rem;
+      left: 0;
+    }
+ 
+ 
+    .c-mv_title-wrap {
+      padding-top: 13.7rem;
+      position: relative;
+      z-index: 10;
+      font-weight: bold;
+    }
+ 
+    .c-mv_title-item {
+      font-size: 4.8rem;
+      line-height: 2;
+    }
+ 
+    .c-mv_title-item span {
+      /* transformプロパティを有効にするため */
+      display: inline-block;
+    }
+ 
+    .c-mv_title-lead {
+      line-height: 2;
+      margin-top: 0.8rem;
+    }
+ 
+    .c-footer .l-inner {
+      padding-top: 0;
+    }
+ 
+    .c-footer .text {
+      color: var(--color-gray);
+    }
+ 
+    .c-info {
+      font-size: 1.4rem;
+      display: inline-block;
+      margin-top: 4rem;
+      margin-bottom: 6.4rem;
+    }
+ 
+    .c-info li {
+      position: relative;
+      padding-left: 16px;
+    }
+ 
+    .c-info li::before {
+      position: absolute;
+      top: 0.6em;
+      left: 0;
+      display: inline-block;
+      width: 8px;
+      height: 2px;
+      content: "";
+      background-color: var(--color-gray);
+    }
+ 
+    .c-info li+li {
+      margin-top: 0.8rem;
+    }
+ 
+    .c-title {
+      font-size: 2.4rem;
+      font-weight: bold;
+      line-height: 1.6;
+      display: inline-block;
+      min-width: 32rem;
+      margin-bottom: 6.4rem;
+      vertical-align: top;
+    }
+ 
+    .c-title [class*="ico-"] {
+      font-size: 1.3rem;
+      line-height: 1;
+      display: block;
+      width: 10rem;
+      margin-bottom: 1.2rem;
+      padding: 0.8rem 0 0.6rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+      background-color: var(--color-gray);
+    }
+ 
+    .c-title .ico-advanced {
+      color: #fff;
+      background-color: #333;
+    }
+ 
+    @media only screen and (max-width: 599px) {
+      html {
+        font-size: 50%;
+      }
+ 
+      .pc-tab {
+        display: none !important;
+      }
+ 
+      .c-temp .button {
+        font-size: 1.2rem;
+        width: 9rem;
+      }
+ 
+      .c-title {
+        min-width: 100%;
+      }
+    }
+ 
+    @media only screen and (min-width: 1025px) {
+      .tab-sp {
+        display: none !important;
+      }
+ 
+      .c-temp .button {
+        -webkit-transition: var(--transition);
+        transition: var(--transition);
+      }
+ 
+      .c-temp .button:hover {
+        background-color: var(--color-theme-darken);
+      }
+    }
+ 
+    @media only screen and (min-width: 600px) {
+      .sp {
+        display: none !important;
+      }
+    }
+ 
+    @media only screen and (max-width: 1200px) {
+      .c-info {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 6.4rem;
+      }
+ 
+      .c-title {
+        margin-bottom: 3.2rem;
+      }
+    }
+ 
+    @media only screen and (max-width: 1024px) {
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+ 
+      .l-inner {
+        padding: 0 4rem;
+      }
+ 
+      .pc {
+        display: none !important;
+      }
+ 
+      .c-temp .l-inner {
+        padding: 3.2rem;
+      }
+ 
+      .c-mv {
+        margin-left: 0;
+      }
+ 
+      main {
+        padding-top: 8.4rem;
+      }
+ 
+      .c-mv_title-item {
+        font-size: 2.4rem;
+      }
+ 
+      .c-mv_title-lead {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+ 
 </head>
-<body class="body">
-    <p class="intro">スクロールしてください<br>↓↓↓</p>
-    <p class="intro">スクロールしてください<br>↓↓↓</p>
-    <p class="intro">スクロールしてください<br>↓↓↓</p>
-    <p class="intro">スクロールしてください<br>↓↓↓</p>
-    <p class="intro">スクロールしてください<br>↓↓↓</p>
-    <div class="circle">
-      <div class="message">
-        <!-- 円弧 -->
-        <svg class="gradient-circle-container" width="500" height="500" viewBox="0 0 500 500">
-          <defs>
-            <!-- グラデーションの始点(x1,y1)　終点(x2,y2) -->
-            <linearGradient id="linear-gradient" x1="0" y1="0.5" x2="1"  y2="0.5">
-              <!-- 始点の色 -->
-              <stop offset="0" stop-color="#FD9BB8"></stop>
-              <!-- 中間の色 -->
-              <stop offset="0.5" stop-color="#CF8BF3"></stop>
-              <!-- 終点の色 -->
-              <stop offset="1" stop-color="#A770EF"></stop>
-            </linearGradient>
-          </defs>
-          <circle class="gradient-stroke-circle" cx="250" cy="250" r="225" stroke="url(#linear-gradient)"></circle>
-        </svg>
-        <!-- 文章エリア -->
-        <div class="message__content">
-            <h2 class="message__title">TITLE</h2>
-            <p class="message__text">
-                Lorem ipsum dolor sit amet,<br>
-                consectetur adipiscing elit,<br>
-                sed do eiusmod tempor incididunt<br>
-                ut labore et dolore magna aliqua
-            </p>
-        </div>
+ 
+<body>
+  <div class="l-wrapper">
+    <!-- 黒い背景とドット -->
+    <div class="c-loader-bg js-loader-bg">
+      <div class="c-loader-dot js-loader-dot-wrap">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="./test.js"></script>
+ 
+    <!-- ヘッダー -->
+    <header class="c-header js-header">
+      <div class="c-temp">
+        <div class="l-inner">
+          <p class="text">[ GSAP DEMO ]</p>
+          <p class="link"><a href="https://b-risk.jp/blog/2022/05/gsap/" class="button">BACK</a></p>
+        </div><!-- /inner-block -->
+      </div><!-- /header -->
+    </header>
+ 
+    <main>
+ 
+      <!-- MV -->
+      <section class="c-mv js-mv">
+        <!-- 丸い図形 -->
+        <div class="c-mv_bubble js-mv-bubble">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1324 768">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: url(#名称未設定グラデーション);
+                }
+ 
+                .cls-2 {
+                  fill: url(#名称未設定グラデーション_2);
+                }
+ 
+                .cls-3 {
+                  fill: url(#名称未設定グラデーション_3);
+                }
+ 
+                .cls-4 {
+                  fill: url(#名称未設定グラデーション_4);
+                }
+ 
+                .cls-5 {
+                  fill: url(#名称未設定グラデーション_5);
+                }
+ 
+                .cls-6 {
+                  fill: url(#名称未設定グラデーション_6);
+                }
+ 
+                .cls-7 {
+                  fill: url(#名称未設定グラデーション_7);
+                }
+ 
+                .cls-8 {
+                  fill: none;
+                }
+ 
+                .cls-9 {
+                  fill: url(#名称未設定グラデーション_8);
+                }
+ 
+                .cls-10 {
+                  fill: url(#名称未設定グラデーション_9);
+                }
+ 
+                .cls-11 {
+                  fill: url(#名称未設定グラデーション_10);
+                }
+ 
+                .cls-12 {
+                  fill: url(#名称未設定グラデーション_11);
+                }
+ 
+                .cls-13 {
+                  fill: url(#名称未設定グラデーション_12);
+                }
+ 
+                .cls-14 {
+                  fill: url(#名称未設定グラデーション_13);
+                }
+              </style>
+              <linearGradient id="名称未設定グラデーション" y1="496.5" x2="121" y2="496.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#9796f0" />
+                <stop offset="1" stop-color="#fbc7d4" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_2" data-name="名称未設定グラデーション 2" x1="619" y1="576.5" x2="702" y2="576.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#ddd6f3" />
+                <stop offset="1" stop-color="#faaca8" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_3" data-name="名称未設定グラデーション 3" x1="1166" y1="317" x2="1324" y2="317"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#6190e8" />
+                <stop offset="1" stop-color="#a7bfe8" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_4" data-name="名称未設定グラデーション 4" x1="981" y1="549" x2="1051" y2="549"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#feac5e" />
+                <stop offset="0.5" stop-color="#c779d0" />
+                <stop offset="1" stop-color="#4bc0c8" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_5" data-name="名称未設定グラデーション 5" x1="753" y1="495" x2="903" y2="495"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fbed96" />
+                <stop offset="1" stop-color="#abecd6" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_6" data-name="名称未設定グラデーション 6" x1="704" y1="219.5" x2="845" y2="219.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#ffefba" />
+                <stop offset="1" stop-color="#fff" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_7" data-name="名称未設定グラデーション 7" x1="965" y1="349" x2="1081" y2="349"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#dbe6f6" />
+                <stop offset="1" stop-color="#c5796d" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_8" data-name="名称未設定グラデーション 8" x1="169" y1="193.5" x2="382" y2="193.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#7f7fd5" />
+                <stop offset="0.5" stop-color="#86a8e7" />
+                <stop offset="1" stop-color="#91eae4" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_9" data-name="名称未設定グラデーション 9" x1="476" y1="290" x2="580" y2="290"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#efefbb" />
+                <stop offset="1" stop-color="#d4d3dd" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_10" data-name="名称未設定グラデーション 10" x1="355" y1="654.5" x2="518" y2="654.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#c9d6ff" />
+                <stop offset="1" stop-color="#e2e2e2" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_11" data-name="名称未設定グラデーション 11" x1="169" y1="696.5" x2="254" y2="696.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#d9a7c7" />
+                <stop offset="1" stop-color="#fffcdc" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_12" data-name="名称未設定グラデーション 12" x1="1039" y1="725.5" x2="1124" y2="725.5"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#c9ffbf" />
+                <stop offset="1" stop-color="#ffafbd" />
+              </linearGradient>
+              <linearGradient id="名称未設定グラデーション_13" data-name="名称未設定グラデーション 13" x1="907" y1="87" x2="1081" y2="87"
+                gradientTransform="matrix(1, 0, 0, -1, 0, 768)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#e1eec3" />
+                <stop offset="1" stop-color="#f05053" />
+              </linearGradient>
+            </defs>
+            <g id="item14">
+              <circle class="cls-1" cx="60.5" cy="271.5" r="60.5" />
+            </g>
+            <g id="item13">
+              <circle class="cls-2" cx="660.5" cy="191.5" r="41.5" />
+            </g>
+            <g id="item12">
+              <circle class="cls-3" cx="1245" cy="451" r="79" />
+            </g>
+            <g id="item11">
+              <circle class="cls-4" cx="1016" cy="219" r="35" />
+            </g>
+            <g id="item10">
+              <circle class="cls-5" cx="828" cy="273" r="75" />
+            </g>
+            <g id="item09">
+              <circle class="cls-6" cx="774.5" cy="548.5" r="70.5" />
+            </g>
+            <g id="item08">
+              <circle class="cls-7" cx="1023" cy="419" r="58" />
+            </g>
+            <g id="item07">
+              <circle class="cls-8" cx="994" cy="681" r="87" />
+            </g>
+            <g id="item06">
+              <circle class="cls-9" cx="275.5" cy="574.5" r="106.5" />
+            </g>
+            <g id="item05">
+              <circle class="cls-10" cx="528" cy="478" r="52" />
+            </g>
+            <g id="item04">
+              <circle class="cls-11" cx="436.5" cy="113.5" r="81.5" />
+            </g>
+            <g id="item03">
+              <circle class="cls-12" cx="211.5" cy="71.5" r="42.5" />
+            </g>
+            <g id="item02">
+              <circle class="cls-13" cx="1081.5" cy="42.5" r="42.5" />
+            </g>
+            <g id="item01">
+              <path class="cls-14" d="M1081,681a87,87,0,1,1-87-87A87,87,0,0,1,1081,681Z" />
+            </g>
+          </svg>
+        </div>
+ 
+        <div class="l-inner">
+          <!-- テキスト類 -->
+          <div class="c-mv_title-wrap">
+            <div class="c-mv_title">
+              <div class="c-mv_title-item js-mv_title-item">GSAPをつかって</div>
+              <div class="c-mv_title-item js-mv_title-item">複雑なオープニングアニメーションを作ってみた！</div>
+            </div>
+            <p class="c-mv_title-lead js-mv_title-lead">GSAP is Professional-grade JavaScript animation for the modern
+              web</p>
+          </div>
+        </div>
+      </section>
+    </main>
+ 
+  </div><!-- /wrapper -->
+ 
+ 
+  <!-- GSAP読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+ 
+      /* 文字列を分割しspanで囲む */
+      (function () {
+        const jsText = document.querySelectorAll('.js-mv_title-item');
+        jsText.forEach(target => {
+          let newText = '';
+          const text = target.textContent;
+          const result = text.split('');
+          for (let i = 0; i < result.length; i++) {
+            newText += '<span>' + result[i] + '</span>';
+          }
+          target.innerHTML = newText;
+        });
+      })();
+ 
+      /* MVアニメーション */
+      (function () {
+ 
+ 
+        /* 以下アニメーション */
+        const jsLoaderBg = '.js-loader-bg'; // カーテン（黒い背景）
+        const jsDot = '.js-loader-dot-wrap > span'; // ドット
+        const jsBubble = '.js-mv-bubble [id*=item]'; // バブル（丸い図形）
+        const jsText = '.js-mv_title-item span'; // メインビジュアルのタイトル
+        const jsLeadText = '.js-mv_title-lead'; // メインビジュアルのリード文
+        const jsHeader = '.js-header'; // ヘッダー
+ 
+ 
+        //初期状態をセット
+        gsap.set(
+          [jsBubble, jsText, jsLeadText],
+          //アニメーションさせない静止状態を指定する
+          {
+            opacity: 0,
+            y: 30
+          },
+        );
+ 
+        /* ドット */
+        gsap.set(jsDot, {
+          opacity: 0,
+          y: -50
+        });
+ 
+        /* ヘッダー */
+        gsap.set(jsHeader, {
+          opacity: 0,
+          y: -50
+        });
+ 
+        gsap.set(['.hoge', '.fuga', '.bar'], {
+          opacity: 0
+        });
+ 
+        // timelineを作成
+        const tl = gsap.timeline();
+ 
+        tl.to(
+          /* ドット */
+          /* 0.8秒後に起動 */
+          jsDot, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.8,
+            stagger: {
+              amount: 0.5,
+              from: "start",
+              ease: 'power4.inOut'
+            }
+          },
+        ).to(
+          /* ドット */
+          /* 前のアニメーションが完了した後、ドットを消す */
+          jsDot, {
+            opacity: 0
+          }
+        ).to(
+          /* カーテン */
+          /* 前のアニメーションが完了した0.5秒後に、カーテンを下へ移動 */
+          jsLoaderBg, {
+            y: '100%'
+          },
+          '+=0.5'
+        ).to(jsBubble, {
+          /* バブル */
+          /* 0.2秒後に、1秒かけてバブルが個別にアニメーション */
+          opacity: 1,
+          y: 0,
+          duration: 0.8, // seconds
+          stagger: {
+            amount: 0.6,
+            from: "start",
+            ease: "sine.in"
+          }
+        }, '+=0.2').to(
+          /* タイトル */
+          jsText, {
+            /* 前のアニメーションが完了する0.1秒前に実行 */
+            opacity: 1,
+            y: 0,
+            stagger: {
+              amount: 1,
+              from: "start",
+              ease: "sine.in"
+            }
+          },
+          "-=0.1"
+        ).to(
+          /* リード文 */
+          jsLeadText, {
+            /* 前のアニメーションが完了する0.1秒前に実行 */
+            opacity: 1,
+            y: 0,
+          },
+          "-=0.2"
+        ).to(
+          /* ヘッダー */
+          /* 前のアニメーションと同時 */
+          jsHeader, {
+            opacity: 1,
+            y: 0,
+          },
+          '<'
+        );
+      })();
+ 
+    })();
+  </script>
 </body>
+ 
 </html>
