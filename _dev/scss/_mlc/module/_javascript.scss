@@ -223,7 +223,7 @@
 
 .m-circle {
     width: 100%;
-    min-height: 100vh;
+    min-height: 78vh;
     height: 100%;
     display: flex;
     align-items: center;
@@ -232,6 +232,7 @@
     margin-bottom: 40px;
     @include media-query {
       margin-bottom: 80px;
+      min-height: 100vh;
     }
 }
 
@@ -249,7 +250,11 @@
 .message__content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 64px;
+
+    @include media-query {
+        gap: 24px;
+    }
 }
 .message__title{
     font-size: 30px;
@@ -276,17 +281,23 @@
 /* ===============================================
 # circle
 =============================================== */
-.gradient-circle-container{
-    max-width: 780px;
-    width: 100%;
+.gradient-circle-container {
+    width: 350px;
     height: auto;
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 0 40px;
+    padding: 0;
     z-index: -1;/*テキストを選択できるように */
     transform-origin: center center;
+
+    @include media-query {
+        width: 800px;
+        min-width: 700px;
+        top: 50%;
+        padding: 0 40px;
+    }
 }
 .gradient-stroke-circle {
     fill: none;/* 塗りつぶしをなしにする */
@@ -325,8 +336,8 @@
 .l-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     position: relative;
+    height: 100vh;
   }
 
   .c-loader-bg {
@@ -427,8 +438,7 @@
 
   .c-mv {
     position: relative;
-    min-height: 78.3rem;
-    margin-left: 4rem;
+    min-height: 100%;
   }
 
   .c-mv_bubble {
@@ -615,4 +625,122 @@
     .c-mv_title-lead {
       font-size: 1.4rem;
     }
+  }
+
+  .cls-1 {
+      fill: url(#名称未設定グラデーション);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, -600px);
+      }
+  }
+
+  .cls-2 {
+      fill: url(#名称未設定グラデーション_2);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, -700px);
+      }
+  }
+
+  .cls-3 {
+      fill: url(#名称未設定グラデーション_3);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(-100px, -800px);
+      }
+  }
+
+  .cls-4 {
+      fill: url(#名称未設定グラデーション_4);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, -400px);
+      }
+  }
+
+  .cls-5 {
+      fill: url(#名称未設定グラデーション_5);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(-200px, 0px);
+      }
+  }
+
+  .cls-6 {
+      fill: url(#名称未設定グラデーション_6);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, 10%);
+      }
+  }
+
+  .cls-7 {
+      fill: url(#名称未設定グラデーション_7);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(-700px, -200px);
+      }
+  }
+
+  .cls-8 {
+      fill: none;
+  }
+
+  .cls-9 {
+      fill: url(#名称未設定グラデーション_8);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, -100px);
+      }
+  }
+
+  .cls-10 {
+      fill: url(#名称未設定グラデーション_9);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, 100px);
+      }
+  }
+
+  .cls-11 {
+      fill: url(#名称未設定グラデーション_10);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, 700px);
+      }
+  }
+
+  .cls-12 {
+      fill: url(#名称未設定グラデーション_11);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, -300px);
+      }
+  }
+
+  .cls-13 {
+      fill: url(#名称未設定グラデーション_12);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, 100px);
+      }
+  }
+
+  .cls-14 {
+      fill: url(#名称未設定グラデーション_13);
+
+      @media only screen and (max-width: 599px) {
+          transform: translate(0px, 100px);
+      }
+  }
+
+  .cls-15 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+          fill: url(#名称未設定グラデーション_13);
+          transform: translate(400px, -300px);
+      }
   }

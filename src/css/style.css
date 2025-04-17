@@ -1029,6 +1029,11 @@ li {
 }
 @media screen and (min-width: 768px) {
   .m-lyt-column[data-column="3"] .m-lyt-column__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .m-lyt-column[data-column="3"] .m-lyt-column__inner {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -1258,7 +1263,7 @@ li {
 
 .m-circle {
   width: 100%;
-  min-height: 100vh;
+  min-height: 78vh;
   height: 100%;
   display: flex;
   align-items: center;
@@ -1269,6 +1274,7 @@ li {
 @media screen and (min-width: 768px) {
   .m-circle {
     margin-bottom: 80px;
+    min-height: 100vh;
   }
 }
 
@@ -1287,7 +1293,12 @@ li {
 .message__content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 64px;
+}
+@media screen and (min-width: 768px) {
+  .message__content {
+    gap: 24px;
+  }
 }
 
 .message__title {
@@ -1318,16 +1329,23 @@ li {
 # circle
 =============================================== */
 .gradient-circle-container {
-  max-width: 780px;
-  width: 100%;
+  width: 350px;
   height: auto;
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0 40px;
+  padding: 0;
   z-index: -1; /*テキストを選択できるように */
   transform-origin: center center;
+}
+@media screen and (min-width: 768px) {
+  .gradient-circle-container {
+    width: 800px;
+    min-width: 700px;
+    top: 50%;
+    padding: 0 40px;
+  }
 }
 
 .gradient-stroke-circle {
@@ -1370,8 +1388,8 @@ li {
 .l-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   position: relative;
+  height: 100vh;
 }
 
 .c-loader-bg {
@@ -1472,8 +1490,7 @@ li {
 
 .c-mv {
   position: relative;
-  min-height: 78.3rem;
-  margin-left: 4rem;
+  min-height: 100%;
 }
 
 .c-mv_bubble {
@@ -1648,6 +1665,138 @@ li {
     font-size: 1.4rem;
   }
 }
+.cls-1 {
+  fill: url(#名称未設定グラデーション);
+}
+@media only screen and (max-width: 599px) {
+  .cls-1 {
+    transform: translate(0px, -600px);
+  }
+}
+
+.cls-2 {
+  fill: url(#名称未設定グラデーション_2);
+}
+@media only screen and (max-width: 599px) {
+  .cls-2 {
+    transform: translate(0px, -700px);
+  }
+}
+
+.cls-3 {
+  fill: url(#名称未設定グラデーション_3);
+}
+@media only screen and (max-width: 599px) {
+  .cls-3 {
+    transform: translate(-100px, -800px);
+  }
+}
+
+.cls-4 {
+  fill: url(#名称未設定グラデーション_4);
+}
+@media only screen and (max-width: 599px) {
+  .cls-4 {
+    transform: translate(0px, -400px);
+  }
+}
+
+.cls-5 {
+  fill: url(#名称未設定グラデーション_5);
+}
+@media only screen and (max-width: 599px) {
+  .cls-5 {
+    transform: translate(-200px, 0px);
+  }
+}
+
+.cls-6 {
+  fill: url(#名称未設定グラデーション_6);
+}
+@media only screen and (max-width: 599px) {
+  .cls-6 {
+    transform: translate(0px, 10%);
+  }
+}
+
+.cls-7 {
+  fill: url(#名称未設定グラデーション_7);
+}
+@media only screen and (max-width: 599px) {
+  .cls-7 {
+    transform: translate(-700px, -200px);
+  }
+}
+
+.cls-8 {
+  fill: none;
+}
+
+.cls-9 {
+  fill: url(#名称未設定グラデーション_8);
+}
+@media only screen and (max-width: 599px) {
+  .cls-9 {
+    transform: translate(0px, -100px);
+  }
+}
+
+.cls-10 {
+  fill: url(#名称未設定グラデーション_9);
+}
+@media only screen and (max-width: 599px) {
+  .cls-10 {
+    transform: translate(0px, 100px);
+  }
+}
+
+.cls-11 {
+  fill: url(#名称未設定グラデーション_10);
+}
+@media only screen and (max-width: 599px) {
+  .cls-11 {
+    transform: translate(0px, 700px);
+  }
+}
+
+.cls-12 {
+  fill: url(#名称未設定グラデーション_11);
+}
+@media only screen and (max-width: 599px) {
+  .cls-12 {
+    transform: translate(0px, -300px);
+  }
+}
+
+.cls-13 {
+  fill: url(#名称未設定グラデーション_12);
+}
+@media only screen and (max-width: 599px) {
+  .cls-13 {
+    transform: translate(0px, 100px);
+  }
+}
+
+.cls-14 {
+  fill: url(#名称未設定グラデーション_13);
+}
+@media only screen and (max-width: 599px) {
+  .cls-14 {
+    transform: translate(0px, 100px);
+  }
+}
+
+.cls-15 {
+  display: none;
+}
+@media only screen and (max-width: 599px) {
+  .cls-15 {
+    display: block;
+    fill: url(#名称未設定グラデーション_13);
+    transform: translate(400px, -300px);
+  }
+}
+
 .test {
   color: rgb(255, 38, 0);
   font-size: 1.25rem;
