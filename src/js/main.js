@@ -98,29 +98,29 @@ const viewMore = (root) => {
 })();
 
 
-const kokiHeader = document.querySelector('.kokiHeader');
-const nav = document.querySelector('.kokiHeader__nav');
-const hamburger = document.getElementById("hamburger");
-const btn = document.getElementById("hamburger__btn");
-const main = document.querySelector(".background");
-console.log(main);
+// const kokiHeader = document.querySelector('.kokiHeader');
+// const nav = document.querySelector('.kokiHeader__nav');
+// const hamburger = document.getElementById("hamburger");
+// const btn = document.getElementById("hamburger__btn");
+// const main = document.querySelector(".background");
+// console.log(main);
 
-btn.addEventListener("click", () => {
-    const active = hamburger.classList.contains('active');
-    if(active) {
-        kokiHeader.classList.remove('active');
-        hamburger.classList.remove('active');
-        main.classList.remove('active');
-        const alertmsg = function(){
-            // nav.classList.remove('active');
-          }
-          setTimeout(alertmsg, 10);
-    } else {
-        kokiHeader.classList.add('active');
-        hamburger.classList.add('active');
-        main.classList.add('active');
-    }
-});
+// btn.addEventListener("click", () => {
+//     const active = hamburger.classList.contains('active');
+//     if(active) {
+//         kokiHeader.classList.remove('active');
+//         hamburger.classList.remove('active');
+//         main.classList.remove('active');
+//         const alertmsg = function(){
+//             // nav.classList.remove('active');
+//           }
+//           setTimeout(alertmsg, 10);
+//     } else {
+//         kokiHeader.classList.add('active');
+//         hamburger.classList.add('active');
+//         main.classList.add('active');
+//     }
+// });
 
 
 
@@ -399,3 +399,29 @@ document.addEventListener('DOMContentLoaded', function() {
   })();
 
 })();
+
+/**
+ * hedder
+ */
+const header = document.querySelector('.header');
+const nav = document.querySelector('.header__nav');
+const hamburger = document.getElementById("hamburger");
+const btn = document.getElementById("hamburger__btn");
+const main = document.querySelector(".background");
+
+btn.addEventListener("click", () => {
+    const active = hamburger.classList.contains('active');
+    if(active) {
+        header.classList.remove('active');
+        hamburger.classList.remove('active');
+        main.classList.remove('active');
+        const alertmsg = function(){
+            // nav.classList.remove('active');
+          }
+          setTimeout(alertmsg, 10);
+    } else {
+        header.classList.add('active');
+        hamburger.classList.add('active');
+        main.classList.add('active');
+    }
+});
