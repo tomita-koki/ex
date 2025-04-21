@@ -105,7 +105,7 @@
 .message__content {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 84px;
 
     @include media-query {
         gap: 24px;
@@ -302,21 +302,21 @@
     width: 100%;
     top: 0;
     left: 0;
-    @media only screen and (max-width: 599px) {
+    @media only screen and (max-width: 800px) {
         height: 100%;
     }
   }
 
   .c-mv_bubble_inner {
     width: 100%;
-    @media only screen and (max-width: 599px) {
+    @media only screen and (max-width: 800px) {
         height: 100%;
     }
   }
 
 
   .c-mv_title-wrap {
-    padding-top: 13.7rem;
+    padding-top: 200px;
     position: relative;
     z-index: 10;
     font-weight: bold;
@@ -335,6 +335,7 @@
   .c-mv_title-lead {
     line-height: 2;
     margin-top: 0.8rem;
+    font-size: 24px;
   }
 
   .c-footer .l-inner {
@@ -474,11 +475,11 @@
     }
 
     .c-mv_title-item {
-      font-size: 2.4rem;
+      font-size: 42px;
     }
 
     .c-mv_title-lead {
-      font-size: 1.4rem;
+      font-size: 24px;
     }
   }
 
@@ -502,7 +503,7 @@
       fill: url(#名称未設定グラデーション_3);
 
       @media only screen and (max-width: 599px) {
-          transform: translate(-100px, -800px);
+          transform: translate(-100px, 800px);
       }
   }
 

@@ -773,7 +773,7 @@ li {
   transform: rotateY(180deg);
 }
 .m-media-reverse__frontContent {
-  background-color: #9a3b3b;
+  background-color: var(--COLOR_BTN2);
   width: 100%;
   height: 100%;
   min-width: 200px;
@@ -1147,7 +1147,7 @@ li {
 .message__content {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 84px;
 }
 @media screen and (min-width: 768px) {
   .message__content {
@@ -1354,7 +1354,7 @@ li {
   top: 0;
   left: 0;
 }
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 800px) {
   .c-mv_bubble {
     height: 100%;
   }
@@ -1363,14 +1363,14 @@ li {
 .c-mv_bubble_inner {
   width: 100%;
 }
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 800px) {
   .c-mv_bubble_inner {
     height: 100%;
   }
 }
 
 .c-mv_title-wrap {
-  padding-top: 13.7rem;
+  padding-top: 200px;
   position: relative;
   z-index: 10;
   font-weight: bold;
@@ -1389,6 +1389,7 @@ li {
 .c-mv_title-lead {
   line-height: 2;
   margin-top: 0.8rem;
+  font-size: 24px;
 }
 
 .c-footer .l-inner {
@@ -1513,10 +1514,10 @@ li {
     margin-left: 0;
   }
   .c-mv_title-item {
-    font-size: 2.4rem;
+    font-size: 42px;
   }
   .c-mv_title-lead {
-    font-size: 1.4rem;
+    font-size: 24px;
   }
 }
 .cls-1 {
@@ -1542,7 +1543,7 @@ li {
 }
 @media only screen and (max-width: 599px) {
   .cls-3 {
-    transform: translate(-100px, -800px);
+    transform: translate(-100px, 800px);
   }
 }
 
@@ -1792,12 +1793,6 @@ li {
   margin-bottom: -7px;
 }
 
-.header {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 100;
-}
 @media screen and (min-width: 768px) {
   .header {
     margin: 0px 120px;
@@ -1916,17 +1911,29 @@ li {
 
 .header.active .header__inner {
   display: block;
-}
-.header.active .header__nav {
+  height: 80px;
+  width: 100%;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
+}
+.header.active .header__nav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 100;
 }
 
 .hamburger {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 120;
 }
 @media screen and (min-width: 768px) {
   .hamburger {
@@ -1972,10 +1979,6 @@ li {
   font-size: 0.625rem;
 }
 
-.hamburger.active {
-  position: relative;
-  z-index: 100;
-}
 .hamburger.active .hamburger__btn {
   background-color: #fff;
 }

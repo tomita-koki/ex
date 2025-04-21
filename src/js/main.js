@@ -9,7 +9,7 @@
 //     const viewMoreItem = viewMore.querySelectorAll('.js-viewMore-item');
 //     const btn = viewMore.querySelector('.js-viewMore-btn');
 //     const btnText = viewMore.querySelector('.js-viewMore-btn-text');
-//     const initialVisibleItems = 5;
+//     const text = 5;
 
 //     if (!viewMoreItem.length || !btn || !btnText) {
 //         return;
@@ -404,24 +404,34 @@ document.addEventListener('DOMContentLoaded', function() {
  * hedder
  */
 const header = document.querySelector('.header');
-const nav = document.querySelector('.header__nav');
 const hamburger = document.getElementById("hamburger");
-const btn = document.getElementById("hamburger__btn");
 const main = document.querySelector(".background");
+// const nav = document.querySelector('.header__nav');
+const btn = document.getElementById("hamburger__btn");
+const texts = document.querySelectorAll(".header__text");
+const elements = [header, hamburger, main];
 
 btn.addEventListener("click", () => {
     const active = hamburger.classList.contains('active');
     if(active) {
-        header.classList.remove('active');
-        hamburger.classList.remove('active');
-        main.classList.remove('active');
+        // header.classList.remove('active');
+        // hamburger.classList.remove('active');
+        // main.classList.remove('active');
+        elements.forEach(el => el.classList.remove('active'));
         const alertmsg = function(){
             // nav.classList.remove('active');
           }
           setTimeout(alertmsg, 10);
     } else {
-        header.classList.add('active');
-        hamburger.classList.add('active');
-        main.classList.add('active');
+        // header.classList.add('active');
+        // hamburger.classList.add('active');
+        // main.classList.add('active');
+        elements.forEach(el => el.classList.add('active'));
     }
+});
+
+texts.forEach(text => {
+    text.addEventListener("click", () => {
+        elements.forEach(el => el.classList.remove('active'));
+    });
 });
