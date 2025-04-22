@@ -596,7 +596,71 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-          fill: url(#名称未設定グラデーション_13);
-          transform: translate(400px, -300px);
+        fill: url(#名称未設定グラデーション_15);
+        transform: translate(600px, 900px);
       }
+  }
+
+  .cls-16 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+          fill: url(#名称未設定グラデーション_16);
+          transform: translate(500px, -500px);
+      }
+  }
+
+  .cls-17 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+        fill: url(#名称未設定グラデーション_17);
+        transform: translate(200px, 1000px);
+      }
+  }
+
+  .cls-18 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+        fill: url(#名称未設定グラデーション_18);
+        transform: translate(113px, 760px);
+      }
+  }
+
+  .cls-19 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+        fill: url(#名称未設定グラデーション_19);
+        transform: translate(300px, -760px);
+      }
+  }
+
+  .cls-20 {
+    display: none;
+      
+      @media only screen and (max-width: 599px) {
+        display: block;
+        fill: url(#名称未設定グラデーション_20);
+        transform: translate(400px, -400px);
+      }
+  }
+
+  .bubble {
+    animation: float 2s ease-in-out infinite alternate;
+  }
+
+  .bubble:nth-child(2) { animation-duration: 0.5s; animation-delay: 0.2s; }
+  .bubble:nth-child(3) { animation-duration: 0.5s; animation-delay: 0.4s; }
+  .bubble:nth-child(4) { animation-duration: 0.5s; animation-delay: 0.1s; }
+  .bubble:nth-child(5) { animation-duration: 0.2s; animation-delay: 0.3s; }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
   }
