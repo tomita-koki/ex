@@ -188,7 +188,7 @@
 /* ===============================================
 # loader backgrond 
 =============================================== */
-.l-wrapper {
+.fv {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -213,18 +213,18 @@
     align-items: center;
     justify-content: start;
     pointer-events: none;
-  }
 
-  .c-loader-dot>span {
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff;
-  }
+    &>.c-loader-dotItem {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
 
-  .c-loader-dot>span+span {
-    margin-left: 3rem;
+    &>.c-loader-dotItem+.c-loader-dotItem {
+      margin-left: 3rem;
+    }
   }
 
   .l-inner {
@@ -483,7 +483,7 @@
   }
 
   .cls-1 {
-      fill: url(#名称未設定グラデーション);
+      fill: url(#gradation);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, -600px);
@@ -491,7 +491,7 @@
   }
 
   .cls-2 {
-      fill: url(#名称未設定グラデーション_2);
+      fill: url(#gradation_2);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, -700px);
@@ -499,7 +499,7 @@
   }
 
   .cls-3 {
-      fill: url(#名称未設定グラデーション_3);
+      fill: url(#gradation_3);
 
       @media only screen and (max-width: 599px) {
           transform: translate(-100px, 800px);
@@ -507,7 +507,7 @@
   }
 
   .cls-4 {
-      fill: url(#名称未設定グラデーション_4);
+      fill: url(#gradation_4);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, -400px);
@@ -515,7 +515,7 @@
   }
 
   .cls-5 {
-      fill: url(#名称未設定グラデーション_5);
+      fill: url(#gradation_5);
 
       @media only screen and (max-width: 599px) {
           transform: translate(-200px, 0px);
@@ -523,7 +523,7 @@
   }
 
   .cls-6 {
-      fill: url(#名称未設定グラデーション_6);
+      fill: url(#gradation_6);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, 10%);
@@ -531,7 +531,7 @@
   }
 
   .cls-7 {
-      fill: url(#名称未設定グラデーション_7);
+      fill: url(#gradation_7);
 
       @media only screen and (max-width: 599px) {
           transform: translate(-700px, -200px);
@@ -543,7 +543,7 @@
   }
 
   .cls-9 {
-      fill: url(#名称未設定グラデーション_8);
+      fill: url(#gradation_8);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, -100px);
@@ -551,7 +551,7 @@
   }
 
   .cls-10 {
-      fill: url(#名称未設定グラデーション_9);
+      fill: url(#gradation_9);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, 100px);
@@ -559,7 +559,7 @@
   }
 
   .cls-11 {
-      fill: url(#名称未設定グラデーション_10);
+      fill: url(#gradation_10);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, 700px);
@@ -567,7 +567,7 @@
   }
 
   .cls-12 {
-      fill: url(#名称未設定グラデーション_11);
+      fill: url(#gradation_11);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, -300px);
@@ -575,7 +575,7 @@
   }
 
   .cls-13 {
-      fill: url(#名称未設定グラデーション_12);
+      fill: url(#gradation_12);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, 100px);
@@ -583,7 +583,7 @@
   }
 
   .cls-14 {
-      fill: url(#名称未設定グラデーション_13);
+      fill: url(#gradation_13);
 
       @media only screen and (max-width: 599px) {
           transform: translate(0px, 100px);
@@ -595,7 +595,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#名称未設定グラデーション_15);
+        fill: url(#gradation_15);
         transform: translate(600px, 900px);
       }
   }
@@ -605,7 +605,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-          fill: url(#名称未設定グラデーション_16);
+          fill: url(#gradation_16);
           transform: translate(500px, -500px);
       }
   }
@@ -615,7 +615,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#名称未設定グラデーション_17);
+        fill: url(#gradation_17);
         transform: translate(200px, 1000px);
       }
   }
@@ -625,7 +625,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#名称未設定グラデーション_18);
+        fill: url(#gradation_18);
         transform: translate(113px, 760px);
       }
   }
@@ -635,7 +635,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#名称未設定グラデーション_19);
+        fill: url(#gradation_19);
         transform: translate(300px, -760px);
       }
   }
@@ -645,7 +645,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#名称未設定グラデーション_20);
+        fill: url(#gradation_20);
         transform: translate(-300px, 700px);
       }
   }

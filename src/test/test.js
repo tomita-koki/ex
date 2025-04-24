@@ -1,3 +1,338 @@
+.test {
+  color: rgb(255, 38, 0);
+  font-size: px-to-rem(20);
+
+  @include media-query {
+    color: rgb(0, 255, 255);
+    font-size: px-to-rem(30);
+  }
+
+  @include hover {
+    color:  rgb(55, 159, 55);
+  }
+}
+
+// .kokiHeader {
+//   margin: 32px 32px 0px;
+  
+//   @include media-query {
+//     margin: 84px 120px 32px;
+//   }
+
+//   &--nonePc {
+//     @include media-query {
+//       display: none;
+//     }
+//   }
+
+//   &__inner {
+//     display: none;
+//     width: 100%;
+    
+//     @include media-query {
+//       border-radius: 10px;
+//       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .3);
+//       text-align: center;
+//       display: inline-block;
+//       padding: 32px;
+//     }
+//   }
+
+//   &__nav {
+//     // opacity: 0;
+//     // visibility: hidden;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 16px;
+//     background-color: #ffffff;
+//     z-index: 10;
+//     width: 100%;
+//     transition: all .5s ease;
+//     padding: 20px;
+
+//     @include media-query {
+//       flex-direction: row;
+//       justify-content: center;
+//       flex-wrap: wrap;
+//       gap: 16px 24px;
+//     }
+//    }
+
+//   &__item {
+//     padding-bottom: 8px;
+//     border-bottom: 3px #FDB0A3 dotted;
+//     text-align: center;
+//     width: 100%;
+
+//     &:last-of-type {
+//       border-bottom: none;
+//     }
+    
+//     @include media-query {
+//       padding-bottom: 0;
+//       border-bottom: none;
+//       width: fit-content;
+//     }
+//   }
+
+//   &__text {
+//     color: var(--COLOR_FONT);
+//     font-weight: bold;
+//     position: relative;
+//     z-index: 0;
+//     transition: all .3s ease;
+
+//     // &::after {
+//     //   content: "";
+//     //   position: absolute;
+//     //   top: 50%;
+//     //   left: 50%;
+//     //   transform: translate(-50%, -50%);
+//     //   display: inline-block;
+//     //   width: 32px;
+//     //   height: 32px;
+//     //   background-color: #fb9c0c;
+//     //   border-radius: 50%;
+//     //   z-index: -1;
+//     // }
+
+//     @include hover {
+//       color: #FDB0A3;
+
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         display: inline-block;
+//         width: 32px;
+//         height: 32px;
+//         background-color: #FEF4E7;
+//         border-radius: 50%;
+//         z-index: -1;
+//       }
+//     }
+//   }
+// }
+// .kokiHeader.active {
+//   .kokiHeader__inner {
+//     display: block;
+//     // height: 100%;
+//     // min-height: 100%;
+//     // background-color: rgb(0 0 0 / 32%);
+//     // transition: all .5s ease;
+//   }
+
+//   .kokiHeader__nav {
+//     // opacity: 1;
+//     // visibility: visible;
+//     position: fixed;
+//     top: 86px;
+//     left: 0;
+//    }
+// }
+
+// .hamburger {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+
+//   @include media-query {
+//     display: none;
+//   }  
+
+//   &__btn {
+//     position: relative;
+//     display: block;
+//     width: 40px;
+//     height: 40px;
+//     margin: 0 0 0 auto;
+  
+//     &::before,
+//     &::after {
+//       content: "";
+//       display: inline-block;
+//       width: 18px;
+//       height: 2px;
+//       background-color: var(--COLOR_FONT);
+//       border-radius: 2px;
+//       position: absolute;
+//       left: 50%;
+//       transform: translateX(-50%);
+//       transition: transform .3s ease;
+//     }
+  
+//     &::before {
+//       top: 30%;
+//     }
+  
+//     &::after {
+//       top: 65%;
+//     }
+//   }
+
+//   &__line {
+//     display: inline-block;
+//     width: 18px;
+//     height: 2px;
+//     background-color: var(--COLOR_FONT);
+//     border-radius: 2px;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+
+//   &__caption {
+//     color: var(--COLOR_FONT);
+//     font-size: px-to-rem(10);
+//     margin-right: .15rem;
+//   }
+// }
+
+// .hamburger.active {
+//   background-color: #fff;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 100;
+//   width: 100%;
+//   padding: 32px 32px 0;
+
+//     .hamburger__btn {  
+//         background-color: #fff;
+  
+//         &::before {
+//           transform:rotate(45deg);
+//           top: 46%;
+//           left: 30%;
+//         }
+//         &::after {
+//           transform:rotate(-45deg);
+//           top: 46%;
+//           left: 30%;
+//         }
+  
+//         & .hamburger__line {
+//           display: none;
+//         }
+//     }
+  
+//     .hamburger__line {
+//       display: inline-block;
+//       width: 18px;
+//       height: 2px;
+//       background-color: var(--COLOR_FONT);
+//       border-radius: 2px;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//     }
+  
+//     .hamburger__caption {
+//       color: var(--COLOR_FONT);
+//       font-size: px-to-rem(10);
+//       margin-right: .15rem;
+//     }
+
+// }
+
+// .background {
+//   display: none;
+// }
+
+// .background.active {
+//   display: block;
+//   position: fixed; /* 画面に固定 */
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+//   z-index: 5; /* 最前面に */
+// }
+
+// const kokiHeader = document.querySelector('.kokiHeader');
+// const nav = document.querySelector('.kokiHeader__nav');
+// const hamburger = document.getElementById("hamburger");
+// const btn = document.getElementById("hamburger__btn");
+// const main = document.querySelector(".background");
+// console.log(main);
+
+// btn.addEventListener("click", () => {
+//     const active = hamburger.classList.contains('active');
+//     if(active) {
+//         kokiHeader.classList.remove('active');
+//         hamburger.classList.remove('active');
+//         main.classList.remove('active');
+//         const alertmsg = function(){
+//             // nav.classList.remove('active');
+//           }
+//           setTimeout(alertmsg, 10);
+//     } else {
+//         kokiHeader.classList.add('active');
+//         hamburger.classList.add('active');
+//         main.classList.add('active');
+//     }
+// });
+
+
+
+
+// -----------------------------------------
+// もっと見るボタン
+// -----------------------------------------
+// const viewMore = (root) => {
+//     let flag = false;
+//     const viewMore = root;
+//     const viewMoreItem = viewMore.querySelectorAll('.js-viewMore-item');
+//     const btn = viewMore.querySelector('.js-viewMore-btn');
+//     const btnText = viewMore.querySelector('.js-viewMore-btn-text');
+//     const text = 5;
+
+//     if (!viewMoreItem.length || !btn || !btnText) {
+//         return;
+//     } else if (viewMoreItem.length < initialVisibleItems) {
+//         btn.style.display = "none";
+//         return;
+//     }
+
+//     // 初期表示以外の要素を非表示にする
+//     for (let i = initialVisibleItems; i < viewMoreItem.length; i++) {
+//         viewMoreItem[i].classList.add("hidden");
+//     }
+
+//     btn.addEventListener('click', () => {
+//         if (flag) {
+//             for (let i = initialVisibleItems; i < viewMoreItem.length; i++) {
+//                 viewMoreItem[i].classList.add("hidden");
+//             }
+//             flag = false;
+//             btnText.textContent = "もっと見る";
+//         } else {
+//             for (let i = initialVisibleItems; i < viewMoreItem.length; i++) {
+//                 viewMoreItem[i].classList.remove("hidden");
+//             }
+//             flag = true;
+//             btnText.textContent = "閉じる";
+//         }
+//         btn.classList.toggle('close');
+//     });
+// };
+
+// (() => {
+//     const roots = document.querySelectorAll(".js-viewMore");
+//     for (let i = 0; i < roots.length; i++) {
+//         viewMore(roots[i]);
+//     }
+// })();
+
+
+
+
 window.addEventListener('DOMContentLoaded',function(){
     gsap.registerPlugin(ScrollTrigger); // ← これが必要！
     const tl = gsap.timeline({
