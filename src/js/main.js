@@ -409,29 +409,27 @@ const main = document.querySelector(".background");
 // const nav = document.querySelector('.header__nav');
 const btn = document.getElementById("hamburger__btn");
 const texts = document.querySelectorAll(".header__text");
+const caption = document.querySelector(".hamburger__caption"); // ← キャプション取得
 const elements = [header, hamburger, main];
 
 btn.addEventListener("click", () => {
     const active = hamburger.classList.contains('active');
     if(active) {
-        // header.classList.remove('active');
-        // hamburger.classList.remove('active');
-        // main.classList.remove('active');
         elements.forEach(el => el.classList.remove('active'));
-        const alertmsg = function(){
+        caption.textContent = "メニュー"; // ← 閉じたら「メニュー」に戻す
+
+        setTimeout(() => {
             // nav.classList.remove('active');
-          }
-          setTimeout(alertmsg, 10);
+        }, 10);
     } else {
-        // header.classList.add('active');
-        // hamburger.classList.add('active');
-        // main.classList.add('active');
         elements.forEach(el => el.classList.add('active'));
+        caption.textContent = "閉じる"; // ← 開いたら「閉じる」に
     }
 });
 
 texts.forEach(text => {
     text.addEventListener("click", () => {
         elements.forEach(el => el.classList.remove('active'));
+        caption.textContent = "メニュー"; // ← テキストクリック時も戻す
     });
 });

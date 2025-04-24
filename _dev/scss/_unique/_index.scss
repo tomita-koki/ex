@@ -508,7 +508,7 @@
   position: fixed;
   top: 30px;
   right: 30px;
-  z-index: 120;
+  z-index: 101;
 
   @include media-query {
     display: none;
