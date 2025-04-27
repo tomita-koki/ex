@@ -8,6 +8,9 @@
 <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <script src="/js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="body">
 <!-- ヘッダー -->
@@ -223,9 +226,9 @@
     <div class="container">
         <div class="section01">
             <div class="m-circle">
-                <div class="message">
+                <div class="m-circle__inner">
                   <!-- 円弧 -->
-                  <svg class="gradient-circle-container" width="500" height="500" viewBox="0 0 500 500">
+                  <svg class="m-circle__circle" width="500" height="500" viewBox="0 0 500 500">
                     <defs>
                       <!-- グラデーションの始点(x1,y1)　終点(x2,y2) -->
                       <linearGradient id="linear-gradient" x1="0" y1="0.5" x2="1"  y2="0.5">
@@ -237,19 +240,19 @@
                         <stop offset="1" stop-color="#A770EF"></stop>
                       </linearGradient>
                     </defs>
-                    <circle class="gradient-stroke-circle" cx="250" cy="250" r="225" stroke="url(#linear-gradient)"></circle>
+                    <circle class="m-circle__circleInner" cx="250" cy="250" r="225" stroke="url(#linear-gradient)"></circle>
                   </svg>
                   <!-- テキストエリア -->
-                  <div class="message__content">
-                      <h2 class="message__title" id="anc-01">Profile</h2>
-                      <div class="message__image">
-                            <img src="/images/S__24969275.jpg" alt="" width="240" height="240" class="message__imageInner">
-                      </div><!-- /.message__image -->
+                  <div class="m-circle__content">
+                      <h2 class="m-circle__title" id="anc-01">Profile</h2>
+                      <div class="m-circle__image">
+                            <img src="/images/S__24969275.jpg" alt="" width="240" height="240" class="m-circle__imageInner">
+                      </div><!-- /.m-circle__image -->
                     <div>
-                        <p class="message__text">はじめまして。</p>
-                        <p class="message__text">現在は都内のIT企業で働いてます。</p>
-                        <p class="message__text">仕事ではwebサイトのコーディングを担当してます。</p>
-                        <p class="message__text">よろしくお願いします！</p>
+                        <p class="m-circle__text">はじめまして。</p>
+                        <p class="m-circle__text">現在は都内のIT企業で働いてます。</p>
+                        <p class="m-circle__text">仕事ではwebサイトのコーディングを担当してます。</p>
+                        <p class="m-circle__text">よろしくお願いします！</p>
                     </div>
                   </div>
                 </div>
@@ -385,8 +388,5 @@
         </div> <!-- /.footer__content -->
     </div><!-- /.footer__inner -->
 </footer><!-- /.footer -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 </body>
 </html>

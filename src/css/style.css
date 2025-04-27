@@ -1115,6 +1115,9 @@ li {
   }
 }
 
+/* ===============================================
+# m-circle
+=============================================== */
 .m-circle {
   width: 100%;
   min-height: 78vh;
@@ -1131,11 +1134,7 @@ li {
     min-height: 100vh;
   }
 }
-
-/* ===============================================
-# message
-=============================================== */
-.message {
+.m-circle__inner {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -1143,46 +1142,38 @@ li {
   justify-content: center;
   position: relative;
 }
-
-.message__content {
+.m-circle__content {
   display: flex;
   flex-direction: column;
   gap: 84px;
 }
 @media screen and (min-width: 768px) {
-  .message__content {
+  .m-circle__content {
     gap: 24px;
   }
 }
-
-.message__title {
+.m-circle__title {
   font-size: 30px;
   text-align: center;
   font-family: "Signika Negative";
 }
-
-.message__image {
+.m-circle__image {
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.message__imageInner {
+.m-circle__imageInner {
   width: fit-content;
   margin: 0 auto;
   border-radius: 50%;
 }
-
-.message__text {
+.m-circle__text {
   font-size: 18px;
   text-align: center;
   font-family: "Signika Negative";
 }
-
-/* ===============================================
-# circle
-=============================================== */
-.gradient-circle-container {
+.m-circle__circle {
   width: 350px;
   height: auto;
   position: absolute;
@@ -1194,15 +1185,14 @@ li {
   transform-origin: center center;
 }
 @media screen and (min-width: 768px) {
-  .gradient-circle-container {
+  .m-circle__circle {
     width: 800px;
     min-width: 700px;
     top: 50%;
     padding: 0 40px;
   }
 }
-
-.gradient-stroke-circle {
+.m-circle__circleInner {
   fill: none; /* 塗りつぶしをなしにする */
   stroke-width: 30; /* 円の線の太さ50 */
   stroke-dasharray: 1060 1413; /* 円の線のスタイルを指定。ここでは、線を75%(1060)と円周を(1413)に設定 */
@@ -1211,6 +1201,9 @@ li {
   transform-origin: center center; /* 回転の中心点を円の中心に設定 */
 }
 
+/* ===============================================
+# m-circle__inner
+=============================================== */
 /* ===============================================
 # splide
 =============================================== */

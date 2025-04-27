@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   /**
-   * circleアニメーション
+   * m-circleアニメーション
    */
   window.addEventListener('DOMContentLoaded',function(){
     gsap.registerPlugin(ScrollTrigger); // ← これが必要！
@@ -156,10 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
         start:'top 70%',
     }});
     tl
-    .fromTo('.message__content > *',{autoAlpha:0,y:20},{autoAlpha:1,y:0,stagger:.3})
-    .fromTo('.gradient-circle-container',{rotate:'-120deg',x:'-50%',y:'-50%'},{duration:1.5,rotate:'0deg',x:'-50%',y:'-50%'},'<')
-    .fromTo('.gradient-stroke-circle',{autoAlpha:0,'stroke-dasharray':'0 1413'},{autoAlpha:1,'stroke-dasharray':'1060 1413',duration:1},'<')
-})
+    .fromTo('.m-circle__content > *',{autoAlpha:0,y:20},{autoAlpha:1,y:0,stagger:.3})
+    .fromTo('.m-circle__circle',{rotate:'-120deg',x:'-50%',y:'-50%'},{duration:1.5,rotate:'0deg',x:'-50%',y:'-50%'},'<')
+    .fromTo('.m-circle__circleInner',{autoAlpha:0,'stroke-dasharray':'0 1413'},{autoAlpha:1,'stroke-dasharray':'1060 1413',duration:1},'<')
+  })
 
 /**
  * スライドショー
@@ -185,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     splide.mount();
 });
-
 
 /**
  * ローディング　FV

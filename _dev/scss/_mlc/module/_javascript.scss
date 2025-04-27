@@ -76,67 +76,63 @@
     }
 }
 
-.m-circle {
-    width: 100%;
-    min-height: 78vh;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 40px;
-    @include media-query {
-      margin-bottom: 80px;
-      min-height: 100vh;
-    }
-}
-
 /* ===============================================
-# message
+# m-circle
 =============================================== */
-.message{
+.m-circle {
+  width: 100%;
+  min-height: 78vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+  @include media-query {
+    margin-bottom: 80px;
+    min-height: 100vh;
+  }
+
+  &__inner {
     width: 100%;
     height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-}
-.message__content {
+  }
+  &__content {
     display: flex;
     flex-direction: column;
     gap: 84px;
 
     @include media-query {
-        gap: 24px;
+      gap: 24px;
     }
-}
-.message__title{
+  }
+  &__title{
     font-size: 30px;
     text-align: center;
     font-family: 'Signika Negative';
-}
-.message__image{
+  }
+  &__image{
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 16px;
 
     &Inner {
-        width: fit-content;
-        margin: 0 auto;
-        border-radius: 50%;
+      width: fit-content;
+      margin: 0 auto;
+      border-radius: 50%;
     }
-}
-.message__text{
+  }
+  &__text{
     font-size: 18px;
     text-align: center;
     font-family: 'Signika Negative';
-}
-/* ===============================================
-# circle
-=============================================== */
-.gradient-circle-container {
+  }
+  &__circle {
     width: 350px;
     height: auto;
     position: absolute;
@@ -153,15 +149,23 @@
         top: 50%;
         padding: 0 40px;
     }
-}
-.gradient-stroke-circle {
+  }
+  &__circleInner {
     fill: none;/* 塗りつぶしをなしにする */
     stroke-width: 30;/* 円の線の太さ50 */
     stroke-dasharray: 1060 1413;/* 円の線のスタイルを指定。ここでは、線を75%(1060)と円周を(1413)に設定 */
     stroke-linecap: round;/* 円の線端を丸くする */
     /* transform: rotate(-90deg); /* 円を-90度回転させる 反転させたいときに使用 */
     transform-origin: center center; /* 回転の中心点を円の中心に設定 */
+  }
 }
+
+/* ===============================================
+# m-circle__inner
+=============================================== */
+
+
+
 /* ===============================================
 # splide
 =============================================== */
