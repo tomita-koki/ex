@@ -140,7 +140,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 0;
-    z-index: -1;/*テキストを選択できるように */
+    z-index: -1;
     transform-origin: center center;
 
     @include media-query {
@@ -161,12 +161,6 @@
 }
 
 /* ===============================================
-# m-circle__inner
-=============================================== */
-
-
-
-/* ===============================================
 # splide
 =============================================== */
 .loop-splide {
@@ -174,7 +168,7 @@
     max-width: 1200px;
     margin: 0 auto 40px;
     @include media-query {
-        margin: 0 auto 80px;
+      margin: 0 auto 80px;
     }
 }
 
@@ -190,6 +184,41 @@
 }
 
 /* ===============================================
+# loader
+=============================================== */
+.c-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 110;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+
+  &__dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    pointer-events: none;
+
+    &>&Item {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+
+    &>&Item+&Item {
+      margin-left: 3rem;
+    }
+  }
+}
+
+/* ===============================================
 # loader backgrond 
 =============================================== */
 .fv {
@@ -199,35 +228,22 @@
     height: 100vh;
   }
 
-  .c-loader-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    z-index: 110;
-    display: grid;
-    place-items: center;
-    pointer-events: none;
-  }
+  .c-mv {
+    position: relative;
+    min-height: 100%;
 
-  .c-loader-dot {
-    display: inline-flex;
-    align-items: center;
-    justify-content: start;
-    pointer-events: none;
-
-    &>.c-loader-dotItem {
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: #fff;
+    &__bubble {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
 
-    &>.c-loader-dotItem+.c-loader-dotItem {
-      margin-left: 3rem;
+    &__bubbleInner {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -294,30 +310,6 @@
     left: 0;
     width: 100%;
   }
-
-  .c-mv {
-    position: relative;
-    min-height: 100%;
-  }
-
-  .c-mv_bubble {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    top: 0;
-    left: 0;
-    @media only screen and (max-width: 800px) {
-        height: 100%;
-    }
-  }
-
-  .c-mv_bubble_inner {
-    width: 100%;
-    @media only screen and (max-width: 800px) {
-        height: 100%;
-    }
-  }
-
 
   .c-mv_title-wrap {
     padding-top: 200px;
@@ -654,56 +646,70 @@
       }
   }
 
-  .bubble {
+  .bubbleItem {
     animation: float 3s ease-in-out infinite alternate;
-  }
-
-  .bubble:nth-child(2) { animation-duration: 4.2s; animation-delay: 2s; }
-  .bubble:nth-child(3) { animation-duration: 5.3s; animation-delay: 0.4s; }
-  .bubble:nth-child(4) { animation-duration: 4.0s; animation-delay: 1s; }
-  .bubble:nth-child(5) { animation-duration: 4.4s; animation-delay: 0.3s; }
-  .bubble:nth-child(6) { animation-duration: 3.5s; animation-delay: 1.3s; }
-  .bubble:nth-child(7) { animation-duration: 4.1s; animation-delay: 0.7s; }
-  .bubble:nth-child(8) { animation-duration: 3.3s; animation-delay: 0.5s; }
-  .bubble:nth-child(9) { animation-duration: 4.5s; animation-delay: 1.5s; }
-  .bubble:nth-child(10) { animation-duration: 2.5s; animation-delay: 1s; }
-  .bubble:nth-child(11) { animation-duration: 1.3s; animation-delay: 0.4s; }
-  .bubble:nth-child(12) { animation-duration: 2.4s; animation-delay: 0.8s; }
-  .bubble:nth-child(13) { animation-duration: 3.5s; animation-delay: 2s; }
-  .bubble:nth-child(14) { animation-duration: 3.5s; animation-delay: 0.6s; }
-  .bubble:nth-child(15) { animation-duration: 5.1s; animation-delay: 1.1s; }
-  .bubble:nth-child(16) { animation-duration: 4.2s; animation-delay: 0.7s; }
-  .bubble:nth-child(17) { animation-duration: 5.0s; animation-delay: 3s; }
-  .bubble:nth-child(18) { animation-duration: 1.5s; animation-delay: 0.3s; }
-  .bubble:nth-child(19) { animation-duration: 3.4s; animation-delay: 0s; }
-  .bubble:nth-child(20) { animation-duration: 2.7s; animation-delay: 0.8s; }
-  @keyframes float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-  }
-
-  @media only screen and (max-width: 599px) {
-    .bubble:nth-child(2) { animation-duration: 4.2s; animation-delay: 2s; }
-    .bubble:nth-child(3) { animation-duration: 5.3s; animation-delay: 0.4s; }
-    .bubble:nth-child(4) { animation-duration: 4.0s; animation-delay: 1s; }
-    .bubble:nth-child(5) { animation-duration: 4.4s; animation-delay: 0.3s; }
-    .bubble:nth-child(6) { animation-duration: 3.5s; animation-delay: 1.3s; }
-    .bubble:nth-child(7) { animation-duration: 4.1s; animation-delay: 0.7s; }
-    .bubble:nth-child(8) { animation-duration: 3.3s; animation-delay: 0.5s; }
-    .bubble:nth-child(9) { animation-duration: 4.5s; animation-delay: 1.5s; }
-    .bubble:nth-child(10) { animation-duration: 2.5s; animation-delay: 1s; }
-    .bubble:nth-child(11) { animation-duration: 1.3s; animation-delay: 0.4s; }
-    .bubble:nth-child(12) { animation-duration: 2.4s; animation-delay: 0.8s; }
-    .bubble:nth-child(13) { animation-duration: 3.5s; animation-delay: 2s; }
-    .bubble:nth-child(14) { animation-duration: 3.5s; animation-delay: 0.6s; }
-    .bubble:nth-child(15) { animation-duration: 5.1s; animation-delay: 1.1s; }
-    .bubble:nth-child(16) { animation-duration: 4.2s; animation-delay: 0.7s; }
-    .bubble:nth-child(17) { animation-duration: 5.0s; animation-delay: 3s; }
-    .bubble:nth-child(18) { animation-duration: 1.5s; animation-delay: 0.3s; }
-    .bubble:nth-child(19) { animation-duration: 3.4s; animation-delay: 0s; }
-    .bubble:nth-child(20) { animation-duration: 2.7s; animation-delay: 0.8s; }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-20px); }
+    &:nth-child(2) { animation-duration: 6.2s; animation-delay: 2s; }
+    &:nth-child(3) { animation-duration: 7.3s; animation-delay: 0.4s; }
+    &:nth-child(4) { animation-duration: 6.0s; animation-delay: 1s; }
+    &:nth-child(5) { animation-duration: 6.4s; animation-delay: 0.3s; }
+    &:nth-child(6) { animation-duration: 5.5s; animation-delay: 1.3s; }
+    &:nth-child(7) { animation-duration: 6.1s; animation-delay: 0.7s; }
+    &:nth-child(8) { animation-duration: 5.3s; animation-delay: 0.5s; }
+    &:nth-child(9) { animation-duration: 6.5s; animation-delay: 1.5s; }
+    &:nth-child(10) { animation-duration: 4.5s; animation-delay: 1s; }
+    &:nth-child(11) { animation-duration: 3.3s; animation-delay: 0.4s; }
+    &:nth-child(12) { animation-duration: 4.4s; animation-delay: 0.8s; }
+    &:nth-child(13) { animation-duration: 5.5s; animation-delay: 2s; }
+    &:nth-child(14) { animation-duration: 5.5s; animation-delay: 0.6s; }
+    &:nth-child(15) { animation-duration: 7.1s; animation-delay: 1.1s; }
+    &:nth-child(16) { animation-duration: 6.2s; animation-delay: 0.7s; }
+    &:nth-child(17) { animation-duration: 7.0s; animation-delay: 3s; }
+    &:nth-child(18) { animation-duration: 3.5s; animation-delay: 0.3s; }
+    &:nth-child(19) { animation-duration: 5.4s; animation-delay: 0s; }
+    &:nth-child(20) { animation-duration: 4.7s; animation-delay: 0.8s; }
+    @include media-query {
+      animation: float-lg 3s ease-in-out infinite alternate;
+      &:nth-child(2) { animation-duration: 10.2s; animation-delay: 2s; }
+      &:nth-child(3) { animation-duration: 11.3s; animation-delay: 0.4s; }
+      &:nth-child(4) { animation-duration: 9.0s; animation-delay: 1s; }
+      &:nth-child(5) { animation-duration: 10.4s; animation-delay: 0.3s; }
+      &:nth-child(6) { animation-duration: 9.5s; animation-delay: 1.3s; }
+      &:nth-child(7) { animation-duration: 8.8s; animation-delay: 0.7s; }
+      &:nth-child(8) { animation-duration: 8.3s; animation-delay: 0.5s; }
+      &:nth-child(9) { animation-duration: 11.5s; animation-delay: 1.5s; }
+      &:nth-child(10) { animation-duration: 8.7s; animation-delay: 1s; }
+      &:nth-child(11) { animation-duration: 9.1s; animation-delay: 0.4s; }
+      &:nth-child(12) { animation-duration: 10.8s; animation-delay: 0.8s; }
+      &:nth-child(13) { animation-duration: 9.5s; animation-delay: 2s; }
+      &:nth-child(14) { animation-duration: 8.6s; animation-delay: 0.6s; }
+      &:nth-child(15) { animation-duration: 11.1s; animation-delay: 1.1s; }
+      &:nth-child(16) { animation-duration: 10.2s; animation-delay: 0.7s; }
+      &:nth-child(17) { animation-duration: 11.0s; animation-delay: 3s; }
+      &:nth-child(18) { animation-duration: 8.5s; animation-delay: 0.3s; }
+      &:nth-child(19) { animation-duration: 9.4s; animation-delay: 0s; }
+      &:nth-child(20) { animation-duration: 8.7s; animation-delay: 0.8s; } 
     }
+  }
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(5px, -5px);
+    }
+    100% {
+      transform: translate(0, -10px);
+    }
+  
+  }
+  @keyframes float-lg {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(10px, -10px);
+    }
+    100% {
+      transform: translate(0, -20px);
+    }  
   }
