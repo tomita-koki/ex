@@ -227,7 +227,7 @@
     }
   }
 
-  .l-inner {
+  .c-content {
     position: relative;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -240,7 +240,7 @@
     border-top: 1px solid #eee;
   }
 
-  .l-section .l-inner {
+  .l-section .c-content {
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
@@ -249,7 +249,7 @@
     line-height: 1;
   }
 
-  .c-temp .l-inner {
+  .c-temp .c-content {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -337,7 +337,7 @@
     font-size: 24px;
   }
 
-  .c-footer .l-inner {
+  .c-footer .c-content {
     padding-top: 0;
   }
 
@@ -457,7 +457,7 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    .l-inner {
+    .c-content {
       padding: 0 4rem;
     }
 
@@ -465,7 +465,7 @@
       display: none !important;
     }
 
-    .c-temp .l-inner {
+    .c-temp .c-content {
       padding: 3.2rem;
     }
 
@@ -595,7 +595,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#gradation_15);
+        fill: url(#gradation_14);
         transform: translate(600px, 900px);
       }
   }
@@ -605,7 +605,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-          fill: url(#gradation_16);
+          fill: url(#gradation_15);
           transform: translate(500px, -500px);
       }
   }
@@ -615,7 +615,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#gradation_17);
+        fill: url(#gradation_16);
         transform: translate(200px, 1000px);
       }
   }
@@ -625,7 +625,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#gradation_18);
+        fill: url(#gradation_17);
         transform: translate(113px, 760px);
       }
   }
@@ -635,7 +635,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#gradation_19);
+        fill: url(#gradation_18);
         transform: translate(300px, -760px);
       }
   }
@@ -645,7 +645,7 @@
       
       @media only screen and (max-width: 599px) {
         display: block;
-        fill: url(#gradation_20);
+        fill: url(#gradation_19);
         transform: translate(-300px, 700px);
       }
   }

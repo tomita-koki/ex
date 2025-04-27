@@ -161,9 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo('.gradient-stroke-circle',{autoAlpha:0,'stroke-dasharray':'0 1413'},{autoAlpha:1,'stroke-dasharray':'1060 1413',duration:1},'<')
 })
 
-  /**
-   * スライドショー
-   */
+/**
+ * スライドショー
+ */
 document.addEventListener('DOMContentLoaded', function() {
     let splide = new Splide('.loop-splide', {
         type: 'loop',

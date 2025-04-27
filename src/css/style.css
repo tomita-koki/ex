@@ -1276,7 +1276,7 @@ li {
   margin-left: 3rem;
 }
 
-.l-inner {
+.c-content {
   position: relative;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -1289,7 +1289,7 @@ li {
   border-top: 1px solid #eee;
 }
 
-.l-section .l-inner {
+.l-section .c-content {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
@@ -1298,7 +1298,7 @@ li {
   line-height: 1;
 }
 
-.c-temp .l-inner {
+.c-temp .c-content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1389,7 +1389,7 @@ li {
   font-size: 24px;
 }
 
-.c-footer .l-inner {
+.c-footer .c-content {
   padding-top: 0;
 }
 
@@ -1498,13 +1498,13 @@ li {
   html {
     -webkit-text-size-adjust: 100%;
   }
-  .l-inner {
+  .c-content {
     padding: 0 4rem;
   }
   .pc {
     display: none !important;
   }
-  .c-temp .l-inner {
+  .c-temp .c-content {
     padding: 3.2rem;
   }
   .c-mv {
@@ -1644,7 +1644,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-15 {
     display: block;
-    fill: url(#gradation_15);
+    fill: url(#gradation_14);
     transform: translate(600px, 900px);
   }
 }
@@ -1655,7 +1655,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-16 {
     display: block;
-    fill: url(#gradation_16);
+    fill: url(#gradation_15);
     transform: translate(500px, -500px);
   }
 }
@@ -1666,7 +1666,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-17 {
     display: block;
-    fill: url(#gradation_17);
+    fill: url(#gradation_16);
     transform: translate(200px, 1000px);
   }
 }
@@ -1677,7 +1677,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-18 {
     display: block;
-    fill: url(#gradation_18);
+    fill: url(#gradation_17);
     transform: translate(113px, 760px);
   }
 }
@@ -1688,7 +1688,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-19 {
     display: block;
-    fill: url(#gradation_19);
+    fill: url(#gradation_18);
     transform: translate(300px, -760px);
   }
 }
@@ -1699,7 +1699,7 @@ li {
 @media only screen and (max-width: 599px) {
   .cls-20 {
     display: block;
-    fill: url(#gradation_20);
+    fill: url(#gradation_19);
     transform: translate(-300px, 700px);
   }
 }
