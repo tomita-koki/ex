@@ -1,0 +1,45 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # mainブランチへのpush時に実行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get git diff for changed files
+        id: get_diff
+        run: |
+          # 変更されたファイルを取得
+          git fetch --prune --unshallow
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+
+      - name: Build only changed files
+        run: |
+          # 差分ファイルがある場合にビルドを実行
+          if [[ "$CHANGED_FILES" =~ .*\.css.*|.*\.js.* ]]; then
+            npm run build  # ここでビルドコマンドを実行
+          else
+            echo "No relevant changes found. Skipping build."
+          fi
+
+      - name: Deploy
+        if: success() && github.ref == 'refs/heads/main'
+        run: |
+          # デプロイコマンドを記述（例: Firebase、Netlify、S3などにデプロイ）
+          npm run deploy
