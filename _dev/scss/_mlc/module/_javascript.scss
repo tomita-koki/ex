@@ -162,18 +162,20 @@
     }
     
     &__titleName {
-      font-size: 42px;
-      line-height: 2;
+      font-size: px-to-rem(42);
       
       @include media-query {
-        font-size: 4.8rem;
+        font-size: px-to-rem(64);
       }
     }
 
     &__text {
-      line-height: 2;
       margin-top: 0.8rem;
-      font-size: 24px;
+      font-size: px-to-rem(24);
+      
+      @include media-query {
+        font-size: px-to-rem(32);
+      }
     }
 
     &__bubbleItem {
@@ -247,57 +249,64 @@
 
   .cls-1 {
       fill: url(#gradation);
+      transform: translate(0px, -600px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, -600px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-2 {
       fill: url(#gradation_2);
+      transform: translate(0px, -700px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, -700px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-3 {
       fill: url(#gradation_3);
+      transform: translate(-100px, 800px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(-100px, 800px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-4 {
       fill: url(#gradation_4);
+      transform: translate(0px, -400px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, -400px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-5 {
       fill: url(#gradation_5);
+      transform: translate(-200px, 0px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(-200px, 0px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-6 {
       fill: url(#gradation_6);
+      transform: translate(0px, 10%);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, 10%);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-7 {
       fill: url(#gradation_7);
+      transform: translate(-700px, -200px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(-700px, -200px);
+      @include media-query {
+        transform: none;
       }
   }
 
@@ -307,110 +316,116 @@
 
   .cls-9 {
       fill: url(#gradation_8);
+      transform: translate(0px, -100px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, -100px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-10 {
       fill: url(#gradation_9);
+      transform: translate(0px, 100px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, 100px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-11 {
       fill: url(#gradation_10);
+      transform: translate(0px, 700px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, 700px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-12 {
       fill: url(#gradation_11);
+      transform: translate(0px, -300px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, -300px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-13 {
       fill: url(#gradation_12);
+      transform: translate(0px, 100px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, 100px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-14 {
       fill: url(#gradation_13);
+      transform: translate(0px, 100px);
 
-      @media only screen and (max-width: 599px) {
-          transform: translate(0px, 100px);
+      @include media-query {
+        transform: none;
       }
   }
 
   .cls-15 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-        fill: url(#gradation_14);
-        transform: translate(600px, 900px);
-      }
+    display: block;
+    fill: url(#gradation_14);
+    transform: translate(600px, 900px);
+
+    @include media-query {
+      display: none;
+    }
   }
 
   .cls-16 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-          fill: url(#gradation_15);
-          transform: translate(500px, -500px);
-      }
+    display: block;
+    fill: url(#gradation_15);
+    transform: translate(500px, -500px);
+
+    @include media-query {
+      display: none;
+    }
   }
 
   .cls-17 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-        fill: url(#gradation_16);
-        transform: translate(200px, 1000px);
-      }
+    display: block;
+    fill: url(#gradation_16);
+    transform: translate(200px, 1000px);
+
+    @include media-query {
+      display: none;
+    }
   }
 
   .cls-18 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-        fill: url(#gradation_17);
-        transform: translate(113px, 760px);
-      }
+    display: block;
+    fill: url(#gradation_17);
+    transform: translate(113px, 760px);
+
+    @include media-query {
+      display: none;
+    }
   }
 
   .cls-19 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-        fill: url(#gradation_18);
-        transform: translate(300px, -760px);
-      }
+    display: block;
+    fill: url(#gradation_18);
+    transform: translate(300px, -760px);
+
+    @include media-query {
+      display: none;
+    }
   }
 
   .cls-20 {
-    display: none;
-      
-      @media only screen and (max-width: 599px) {
-        display: block;
-        fill: url(#gradation_19);
-        transform: translate(-300px, 700px);
-      }
+    display: block;
+    fill: url(#gradation_19);
+    transform: translate(-300px, 700px);
+
+    @include media-query {
+      display: none;
+    }
   }
   
 /* ===============================================
