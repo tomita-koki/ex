@@ -143,11 +143,11 @@
       position: relative;
       box-sizing: content-box;
       max-width: 1200px;
+      height: 100%;
       margin: 0 auto;
-      padding: 2rem 5rem;
+      padding: 0px 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
 
       @include media-query {
         padding: 4rem 10rem;
@@ -155,11 +155,12 @@
     }
 
     &__title {
-      padding-top: 200px;
-      position: relative;
-      font-weight: bold;
+      margin-bottom: 0px;
+      @include media-query {
+        margin-bottom: 200px;
+      }
     }
-
+    
     &__titleName {
       font-size: 42px;
       line-height: 2;

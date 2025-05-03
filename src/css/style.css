@@ -1177,11 +1177,11 @@ li {
   position: relative;
   box-sizing: content-box;
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
-  padding: 2rem 5rem;
+  padding: 0px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   .c-mv__content {
@@ -1189,9 +1189,12 @@ li {
   }
 }
 .c-mv__title {
-  padding-top: 200px;
-  position: relative;
-  font-weight: bold;
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 768px) {
+  .c-mv__title {
+    margin-bottom: 200px;
+  }
 }
 .c-mv__titleName {
   font-size: 42px;
