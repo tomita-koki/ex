@@ -142,7 +142,7 @@ const openingAnimKeyframes = (content) => [
 // -----------------------------------------
 
 window.addEventListener('DOMContentLoaded',function(){
-  gsap.registerPlugin(ScrollTrigger); // ← これが必要！
+  gsap.registerPlugin(ScrollTrigger);
   const tl = gsap.timeline({
       scrollTrigger:{
       trigger:'.m-circle',
