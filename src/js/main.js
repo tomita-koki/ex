@@ -324,12 +324,17 @@ const toggleTabIndex = (disable) => {
       }
   });
 };
+btn.setAttribute("aria-expanded", "false");
+btn.setAttribute("aria-controls", "hamburger");
+btn.setAttribute("aria-label", "メニューを開く");
 
 btn.addEventListener("click", () => {
     const active = hamburger.classList.contains('active');
     if(active) {
         elements.forEach(el => el.classList.remove('active'));
         caption.textContent = "メニュー";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-label", "メニューを開く");
         toggleTabIndex(false);
 
         setTimeout(() => {
@@ -338,6 +343,8 @@ btn.addEventListener("click", () => {
     } else {
         elements.forEach(el => el.classList.add('active'));
         caption.textContent = "閉じる";
+        btn.setAttribute("aria-expanded", "true");
+        btn.setAttribute("aria-label", "メニューを閉じる");
         toggleTabIndex(true);
     }
 });
@@ -346,6 +353,8 @@ texts.forEach(text => {
     text.addEventListener("click", () => {
         elements.forEach(el => el.classList.remove('active'));
         caption.textContent = "メニュー";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-label", "メニューを開く");
         toggleTabIndex(false);
     });
 });
@@ -353,8 +362,16 @@ texts.forEach(text => {
 background.addEventListener("click", () => {
   const active = hamburger.classList.contains('active');
   if(active) {
-      elements.forEach(el => el.classList.remove('active'));
+    elements.forEach(el => el.classList.remove('active'));
+    caption.textContent = "メニュー";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-label", "メニューを開く");
+    toggleTabIndex(false);
   } else {
-      elements.forEach(el => el.classList.add('active'));
+    elements.forEach(el => el.classList.add('active'));
+    caption.textContent = "閉じる";
+    btn.setAttribute("aria-expanded", "true");
+    btn.setAttribute("aria-label", "メニューを閉じる");
+    toggleTabIndex(true);
   }
 });
