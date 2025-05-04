@@ -310,12 +310,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const header = document.querySelector('.header');
 const hamburger = document.getElementById("hamburger");
-const main = document.querySelector(".header__background");
+const background = document.querySelector(".header__background");
 // const nav = document.querySelector('.header__nav');
 const btn = document.getElementById("hamburger__btn");
 const texts = document.querySelectorAll(".header__text");
 const caption = document.querySelector(".hamburger__caption");
-const elements = [header, hamburger, main];
+const elements = [header, hamburger, background];
 const toggleTabIndex = (disable) => {
   const focusableElements = document.querySelectorAll('a, button, input, textarea, select, [tabindex]');
   focusableElements.forEach(el => {
@@ -348,4 +348,13 @@ texts.forEach(text => {
         caption.textContent = "メニュー";
         toggleTabIndex(false);
     });
+});
+
+background.addEventListener("click", () => {
+  const active = hamburger.classList.contains('active');
+  if(active) {
+      elements.forEach(el => el.classList.remove('active'));
+  } else {
+      elements.forEach(el => el.classList.add('active'));
+  }
 });
