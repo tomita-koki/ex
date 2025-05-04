@@ -316,12 +316,21 @@ const btn = document.getElementById("hamburger__btn");
 const texts = document.querySelectorAll(".header__text");
 const caption = document.querySelector(".hamburger__caption");
 const elements = [header, hamburger, main];
+const toggleTabIndex = (disable) => {
+  const focusableElements = document.querySelectorAll('a, button, input, textarea, select, [tabindex]');
+  focusableElements.forEach(el => {
+      if (!hamburger.contains(el) && el !== btn && !el.classList.contains('header__text')) {
+          el.tabIndex = disable ? -1 : 0;
+      }
+  });
+};
 
 btn.addEventListener("click", () => {
     const active = hamburger.classList.contains('active');
     if(active) {
         elements.forEach(el => el.classList.remove('active'));
         caption.textContent = "メニュー";
+        toggleTabIndex(false);
 
         setTimeout(() => {
             // nav.classList.remove('active');
@@ -329,6 +338,7 @@ btn.addEventListener("click", () => {
     } else {
         elements.forEach(el => el.classList.add('active'));
         caption.textContent = "閉じる";
+        toggleTabIndex(true);
     }
 });
 
@@ -336,5 +346,6 @@ texts.forEach(text => {
     text.addEventListener("click", () => {
         elements.forEach(el => el.classList.remove('active'));
         caption.textContent = "メニュー";
+        toggleTabIndex(false);
     });
 });
