@@ -534,3 +534,17 @@
 .splide__slide {
     margin-right: 20px;
 }
+
+/* ===============================================
+# js-scroll-fadeinup
+=============================================== */
+.js-scroll-fadeinup {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.js-scroll-fadeinup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

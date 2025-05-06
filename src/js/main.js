@@ -375,3 +375,29 @@ background.addEventListener("click", () => {
     toggleTabIndex(true);
   }
 });
+
+// -----------------------------------------
+// js-scroll-fadeinup
+// -----------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const targets = document.querySelectorAll(".js-scroll-fadeinup");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  targets.forEach((target) => {
+    observer.observe(target);
+  });
+});
